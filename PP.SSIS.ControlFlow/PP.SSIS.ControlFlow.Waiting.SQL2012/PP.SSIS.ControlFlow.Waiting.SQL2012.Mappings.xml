@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mappings xmlns="http://www.microsoft.com/SqlServer/Dts/UpgradeMapping.xsd">
+  <!-- PP.SSIS Upgrade Mappings 
+  
+    Upgrade Mappings from SQL 2008 to SQL 2012
+    
+  -->
+
+  <!-- SQL 2008 to SQL 2012 -->
+
+</Mappings>

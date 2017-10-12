@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Extensions xmlns="http://www.microsoft.com/SqlServer/Dts/Extensions.xsd">
+
+  <!--
+		PP.SSIS SQL Server Integration Services Custom Components
+    (c) 2012 - 2017 Pavel Pawlowski
+    -->
+
+  <Tasks>
+    <Task Identifier="PP.SSIS.ControlFlow.Logging.VariablesToXm" Model=".NET">
+      <CreationName>PP.SSIS.ControlFlow.Logging.VariablesToXmlTask, PP.SSIS.ControlFlow.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0345354cb1bab4b7</CreationName>
+    </Task>
+  </Tasks>
+
+  <PipelineComponents>
+  </PipelineComponents>
+
+  <ConnectionManagers>
+  </ConnectionManagers>
+  <Enumerators>
+  </Enumerators>
+  <LogProviders>
+  </LogProviders>
+</Extensions>

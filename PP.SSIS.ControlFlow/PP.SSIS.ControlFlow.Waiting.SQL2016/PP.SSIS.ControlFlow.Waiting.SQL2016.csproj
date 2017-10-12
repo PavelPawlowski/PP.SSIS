@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09104CE8-3F62-43BA-AE87-AFA08C732C5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PP.SSIS.ControlFlow.Waiting</RootNamespace>
+    <AssemblyName>PP.SSIS.ControlFlow.Waiting.SQL2016</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2016</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SQL2016</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PP.SSIS.ControlFlow.Waiting.SQL2016.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Dts.Design, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PP.SSIS.ControlFlow.Waiting.SQL2016.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\SleepTask.cs">
+      <Link>SleepTask.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\IUIForm.cs">
+      <Link>UI\Abstract\IUIForm.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\IUIHelper.cs">
+      <Link>UI\Abstract\IUIHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\TaskPropertiesFrom.cs">
+      <Link>UI\Abstract\TaskPropertiesFrom.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\TaskPropertiesFrom.designer.cs">
+      <Link>UI\Abstract\TaskPropertiesFrom.designer.cs</Link>
+      <DependentUpon>TaskPropertiesFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\TaskPropertyClass.cs">
+      <Link>UI\Abstract\TaskPropertyClass.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\TaskUI.cs">
+      <Link>UI\Abstract\TaskUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\TaskUIGeneric.cs">
+      <Link>UI\Abstract\TaskUIGeneric.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\SleepTaskProperties.cs">
+      <Link>UI\SleepTaskProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\SleepTaskUI.cs">
+      <Link>UI\SleepTaskUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForFileForm.cs">
+      <Link>UI\WaitForFileForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForFileForm.designer.cs">
+      <Link>UI\WaitForFileForm.designer.cs</Link>
+      <DependentUpon>WaitForFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForFileUI.cs">
+      <Link>UI\WaitForFileUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForSignalProperties.cs">
+      <Link>UI\WaitForSignalProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForSignalUI.cs">
+      <Link>UI\WaitForSignalUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForTimeProperties.cs">
+      <Link>UI\WaitForTimeProperties.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForTimeUI.cs">
+      <Link>UI\WaitForTimeUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\WaitForFile.cs">
+      <Link>WaitForFile.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\WaitForSignal.cs">
+      <Link>WaitForSignal.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\WaitForTime.cs">
+      <Link>WaitForTime.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PP.SSIS.ControlFlow.Waiting.SQL2016.Extensions.xml" />
+    <Content Include="PP.SSIS.ControlFlow.Waiting.SQL2016.Mappings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\Abstract\TaskPropertiesFrom.resx">
+      <Link>UI\Abstract\TaskPropertiesFrom.resx</Link>
+      <DependentUpon>TaskPropertiesFrom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\UI\WaitForFileForm.resx">
+      <Link>UI\WaitForFileForm.resx</Link>
+      <DependentUpon>WaitForFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\Resources\Sleep.ico">
+      <Link>Resources\Sleep.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\Resources\WaitFor.ico">
+      <Link>Resources\WaitFor.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\Resources\WaitForFile.ico">
+      <Link>Resources\WaitForFile.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Waiting.SQL2014\Resources\WaitForTime.ico">
+      <Link>Resources\WaitForTime.ico</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\x64\gacutil.exe" -u "$(TargetName), Version=1.0.0.0, Culture=neutral, PublicKeyToken=d958e388b0ffd524"
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\x64\gacutil.exe" -i "$(TargetPath)"
+copy /Y "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Tasks"
+copy /Y "$(ProjectDir)$(TargetName).Extensions.xml" "C:\Program Files (x86)\Microsoft SQL Server\130\DTS\UpgradeMappings"
+copy /Y "$(ProjectDir)$(TargetName).Mappings.xml" "C:\Program Files (x86)\Microsoft SQL Server\130\DTS\UpgradeMappings"
+copy /Y "$(ProjectDir)$(TargetName).Extensions.xml" "C:\Program Files\Microsoft SQL Server\130\DTS\UpgradeMappings"
+copy /Y "$(ProjectDir)$(TargetName).Mappings.xml" "C:\Program Files\Microsoft SQL Server\130\DTS\UpgradeMappings"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

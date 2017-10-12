@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Extensions xmlns="http://www.microsoft.com/SqlServer/Dts/Extensions.xsd">
+
+  <!--
+		PP.SSIS SQL Server Integration Services Custom Components
+    (c) 2012 - 2017 Pavel Pawlowski
+    -->
+
+  <Tasks>
+  </Tasks>
+
+  <PipelineComponents>
+    <PipelineComponent Identifier="PP.SSIS.DataFlow.ColumnsToXmlTransformation" Model=".NET">
+      <CreationName>PP.SSIS.DataFlow.ColumnsToXmlTransformation, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</CreationName>
+    </PipelineComponent>
+
+    <PipelineComponent Identifier="PP.SSIS.DataFlow.HashColumnsTransformation" Model=".NET">
+      <CreationName>PP.SSIS.DataFlow.HashColumnsTransformation, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</CreationName>
+      <TypeConverter name="ParallelProcessing">PP.SSIS.DataFlow.HashColumnsTransformation+ParallelProcessing, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+      <TypeConverter name="HashType">PP.SSIS.DataFlow.HashColumnsTransformation+HashType, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+      <TypeConverter name="HashImplementationType">PP.SSIS.DataFlow.HashColumnsTransformation+HashImplementationType, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+      <TypeConverter name="StringTrimming">PP.SSIS.DataFlow.HashColumnsTransformation+StringTrimming, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+    </PipelineComponent>
+
+    <PipelineComponent Identifier="PP.SSIS.DataFlow.HistoryLookupTransformation" Model=".NET">
+      <CreationName>PP.SSIS.DataFlow.HistoryLookupTransformation, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</CreationName>
+      <TypeConverter name="NoMatchBehavior">PP.SSIS.DataFlow.HistoryLookupTransformation+NoMatchBehavior, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+      <TypeConverter name="CacheType">PP.SSIS.DataFlow.HistoryLookupTransformation+CacheType, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+      <TypeConverter name="HashAlgorithmType">PP.SSIS.DataFlow.Common.HashAlgorithmType, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+      <TypeConverter name="InputColumnUsageType">PP.SSIS.DataFlow.HistoryLookupTransformation+InputColumnUsageType, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+      <TypeConverter name="DateComparison">PP.SSIS.DataFlow.HistoryLookupTransformation+DateComparison, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+    </PipelineComponent>
+
+    <PipelineComponent Identifier="PP.SSIS.DataFlow.LookupErrorAggregationTransformation" Model=".NET">
+      <CreationName>PP.SSIS.DataFlow.LookupErrorAggregationTransformation, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</CreationName>
+      <TypeConverter name="HashAlgorithmType">PP.SSIS.DataFlow.Common.HashAlgorithmType, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+    </PipelineComponent>
+
+    <PipelineComponent Identifier="PP.SSIS.DataFlow.RegExExtractionTransformation" Model=".NET">
+      <CreationName>PP.SSIS.DataFlow.RegExExtractionTransformation, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</CreationName>
+      <TypeConverter name="RegexOutputType">PP.SSIS.DataFlow.RegExExtractionTransformation+RegexOutputType, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</TypeConverter>
+    </PipelineComponent>
+
+    <PipelineComponent Identifier="PP.SSIS.DataFlow.RowNumberTransformation" Model=".NET">
+      <CreationName>PP.SSIS.DataFlow.RowNumberTransformation, PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397</CreationName>
+    </PipelineComponent>
+  </PipelineComponents>
+
+  <ConnectionManagers>
+  </ConnectionManagers>
+  <Enumerators>
+  </Enumerators>
+  <LogProviders>
+  </LogProviders>
+</Extensions>

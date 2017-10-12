@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mappings xmlns="http://www.microsoft.com/SqlServer/Dts/UpgradeMapping.xsd">
+  <!-- PP.SSIS Upgrade Mappings 
+  
+    Upgrade Mappings from SQL 2008 to SQL 2012
+  -->
+
+  <!-- SQL 2008 to SQL 2012 -->
+  <ExtensionMapping tag="PP.SSIS.ControlFlow.Logging 2008"
+                    oldAssemblyStrongName="PP.SSIS.ControlFlow.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0345354cb1bab4b7"
+                    newAssemblyStrongName="PP.SSIS.ControlFlow.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9027dfa324bcd1b8" />
+</Mappings>

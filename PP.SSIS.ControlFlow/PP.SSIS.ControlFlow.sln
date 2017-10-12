@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Waiting.SQL2014", "PP.SSIS.ControlFlow.Waiting.SQL2014\PP.SSIS.ControlFlow.Waiting.SQL2014.csproj", "{7316C568-132C-4D8C-A29D-07BAB3923914}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Logging.SQL2014", "PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Logging.SQL2014.csproj", "{702E63C1-8D27-4732-9F51-631E591D8D52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Logging.SQL2008", "PP.SSIS.ControlFlow.Logging.SQL2008\PP.SSIS.ControlFlow.Logging.SQL2008.csproj", "{CDF48CF1-4CF7-47BE-8027-97FAEBC51048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Logging.SQL2012", "PP.SSIS.ControlFlow.Logging.SQL2012\PP.SSIS.ControlFlow.Logging.SQL2012.csproj", "{4056761E-0BFE-4F20-8F66-877A2445B747}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Waiting.SQL2012", "PP.SSIS.ControlFlow.Waiting.SQL2012\PP.SSIS.ControlFlow.Waiting.SQL2012.csproj", "{B6CC4BBB-8905-41C7-8ABA-1BFA5287C6AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Logging.SQL2016", "PP.SSIS.ControlFlow.Logging.SQL2016\PP.SSIS.ControlFlow.Logging.SQL2016.csproj", "{C82CC195-72E5-4D38-8734-FF51D213BB76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Waiting.SQL2016", "PP.SSIS.ControlFlow.Waiting.SQL2016\PP.SSIS.ControlFlow.Waiting.SQL2016.csproj", "{09104CE8-3F62-43BA-AE87-AFA08C732C5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Logging.SQL2017", "PP.SSIS.ControlFlow.Logging.SQL2017\PP.SSIS.ControlFlow.Logging.SQL2017.csproj", "{4AB0A527-E968-445C-9BC4-FA41BFDB41B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Waiting.SQL2017", "PP.SSIS.ControlFlow.Waiting.SQL2017\PP.SSIS.ControlFlow.Waiting.SQL2017.csproj", "{56A1036F-CF2D-4EFA-8841-0DE78221394A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7316C568-132C-4D8C-A29D-07BAB3923914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7316C568-132C-4D8C-A29D-07BAB3923914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7316C568-132C-4D8C-A29D-07BAB3923914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7316C568-132C-4D8C-A29D-07BAB3923914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{702E63C1-8D27-4732-9F51-631E591D8D52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{702E63C1-8D27-4732-9F51-631E591D8D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{702E63C1-8D27-4732-9F51-631E591D8D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{702E63C1-8D27-4732-9F51-631E591D8D52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF48CF1-4CF7-47BE-8027-97FAEBC51048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF48CF1-4CF7-47BE-8027-97FAEBC51048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDF48CF1-4CF7-47BE-8027-97FAEBC51048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF48CF1-4CF7-47BE-8027-97FAEBC51048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4056761E-0BFE-4F20-8F66-877A2445B747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4056761E-0BFE-4F20-8F66-877A2445B747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4056761E-0BFE-4F20-8F66-877A2445B747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4056761E-0BFE-4F20-8F66-877A2445B747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6CC4BBB-8905-41C7-8ABA-1BFA5287C6AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6CC4BBB-8905-41C7-8ABA-1BFA5287C6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6CC4BBB-8905-41C7-8ABA-1BFA5287C6AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6CC4BBB-8905-41C7-8ABA-1BFA5287C6AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82CC195-72E5-4D38-8734-FF51D213BB76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82CC195-72E5-4D38-8734-FF51D213BB76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82CC195-72E5-4D38-8734-FF51D213BB76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82CC195-72E5-4D38-8734-FF51D213BB76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09104CE8-3F62-43BA-AE87-AFA08C732C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09104CE8-3F62-43BA-AE87-AFA08C732C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09104CE8-3F62-43BA-AE87-AFA08C732C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09104CE8-3F62-43BA-AE87-AFA08C732C5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB0A527-E968-445C-9BC4-FA41BFDB41B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB0A527-E968-445C-9BC4-FA41BFDB41B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB0A527-E968-445C-9BC4-FA41BFDB41B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB0A527-E968-445C-9BC4-FA41BFDB41B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A1036F-CF2D-4EFA-8841-0DE78221394A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A1036F-CF2D-4EFA-8841-0DE78221394A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A1036F-CF2D-4EFA-8841-0DE78221394A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A1036F-CF2D-4EFA-8841-0DE78221394A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

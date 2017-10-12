@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mappings xmlns="http://www.microsoft.com/SqlServer/Dts/UpgradeMapping.xsd">
+  <!-- PP.SSIS Upgrade Mappings 
+  
+    Upgrade Mappings from SQL 2008 to SQL 2016
+    Upgrade Mappings from SQL 2012 to SQL 2016
+    Upgrade Mappings from SQL 2014 to SQL 2016
+  -->
+
+  <!-- SQL 2008 to SQL 2016 -->
+  <ExtensionMapping tag="PP.SSIS.ControlFlow.Logging 2008"
+                    oldAssemblyStrongName="PP.SSIS.ControlFlow.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0345354cb1bab4b7"
+                    newAssemblyStrongName="PP.SSIS.ControlFlow.Logging.SQL2016, Version=1.0.0.0, Culture=neutral, PublicKeyToken=682d6707f9000ec0" />
+
+  <!-- SQL 2012 to SQL 2016 -->
+  <ExtensionMapping tag="PP.SSIS.ControlFlow.Logging 2012"
+                    oldAssemblyStrongName="PP.SSIS.ControlFlow.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9027dfa324bcd1b8"
+                    newAssemblyStrongName="PP.SSIS.ControlFlow.Logging.SQL2016, Version=1.0.0.0, Culture=neutral, PublicKeyToken=682d6707f9000ec0" />
+
+
+  <!-- SQL 2014 to SQL 2016 -->
+  <ExtensionMapping tag="PP.SSIS.ControlFlow.Logging 2014"
+                    oldAssemblyStrongName="PP.SSIS.ControlFlow.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cff0b3d3ec54bb0d"
+                    newAssemblyStrongName="PP.SSIS.ControlFlow.Logging.SQL2016, Version=1.0.0.0, Culture=neutral, PublicKeyToken=682d6707f9000ec0" />
+</Mappings>

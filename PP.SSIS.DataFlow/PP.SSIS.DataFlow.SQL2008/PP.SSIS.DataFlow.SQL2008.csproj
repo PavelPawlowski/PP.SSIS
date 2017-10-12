@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B056B013-53ED-4BED-B4C9-C0C3A81AD9D9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PP.SSIS.DataFlow</RootNamespace>
+    <AssemblyName>PP.SSIS.DataFlow</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PP.SSIS.DataFlow.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2008</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SQL2008</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DefineConstants Condition=" !$(DefineConstants.Contains(';NET')) ">$(DefineConstants);$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
+    <DefineConstants Condition=" $(DefineConstants.Contains(';NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(";NET"))));$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", ""))</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Dts.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86" />
+    <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\ColumnsToXmlTransformation.cs">
+      <Link>ColumnsToXmlTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\ConvertMetadataInputColumn.cs">
+      <Link>Common\ConvertMetadataInputColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\Crc32.cs">
+      <Link>Common\Crc32.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\FlagsEnumEditor.cs">
+      <Link>Common\FlagsEnumEditor.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\FormInputColumn.cs">
+      <Link>Common\FormInputColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\HashAlgorithmType.cs">
+      <Link>Common\HashAlgorithmType.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\InputBufferColumnInfo.cs">
+      <Link>Common\InputBufferColumnInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\InputColumns.cs">
+      <Link>Common\InputColumns.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\KeyDataHash.cs">
+      <Link>Common\KeyDataHash.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\PipelineUtils.cs">
+      <Link>Common\PipelineUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\XmlDataType.cs">
+      <Link>Common\XmlDataType.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\HashColumnsTransformation.cs">
+      <Link>HashColumnsTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\HashColumnsTransformationHelper.cs">
+      <Link>HashColumnsTransformationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\DataFlowUI.cs">
+      <Link>UI\Abstract\DataFlowUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\ErrorMetadataInputColumn.cs">
+      <Link>UI\Abstract\ErrorMetadataInputColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\FormOutput.cs">
+      <Link>UI\Abstract\FormOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\FormOutputColumn.cs">
+      <Link>UI\Abstract\FormOutputColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\INameProvider.cs">
+      <Link>UI\Abstract\INameProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\IUIForm.cs">
+      <Link>UI\Abstract\IUIForm.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\IUIHelper.cs">
+      <Link>UI\Abstract\IUIHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\UIForm.cs">
+      <Link>UI\Abstract\UIForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\ColumnsToXmlTransformationUI.cs">
+      <Link>UI\ColumnsToXmlTransformationUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\ColumnsToXmlTransformationForm.cs">
+      <Link>UI\Forms\ColumnsToXmlTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\ColumnsToXmlTransformationForm.designer.cs">
+      <Link>UI\Forms\ColumnsToXmlTransformationForm.designer.cs</Link>
+      <DependentUpon>ColumnsToXmlTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HashColumnsTransformationForm.cs">
+      <Link>UI\Forms\HashColumnsTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HashColumnsTransformationForm.designer.cs">
+      <Link>UI\Forms\HashColumnsTransformationForm.designer.cs</Link>
+      <DependentUpon>HashColumnsTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\InputColumnsUIEditorForm.cs">
+      <Link>UI\Forms\InputColumnsUIEditorForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\InputColumnsUIEditorForm.designer.cs">
+      <Link>UI\Forms\InputColumnsUIEditorForm.designer.cs</Link>
+      <DependentUpon>InputColumnsUIEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\HashColumnsTransformationUI.cs">
+      <Link>UI\HashColumnsTransformationUI.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\ColumnsToXmlTransformationForm.resx">
+      <Link>UI\Forms\ColumnsToXmlTransformationForm.resx</Link>
+      <DependentUpon>ColumnsToXmlTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HashColumnsTransformationForm.resx">
+      <Link>UI\Forms\HashColumnsTransformationForm.resx</Link>
+      <DependentUpon>HashColumnsTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\InputColumnsUIEditorForm.resx">
+      <Link>UI\Forms\InputColumnsUIEditorForm.resx</Link>
+      <DependentUpon>InputColumnsUIEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\ColumnsToXml.ico">
+      <Link>Resources\ColumnsToXml.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\Crc32.ico">
+      <Link>Resources\Crc32.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\HashColumns.ico">
+      <Link>Resources\HashColumns.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\RowNumber.ico">
+      <Link>Resources\RowNumber.ico</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PP.SSIS.DataFlow.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\HistoryLookup.ico">
+      <Link>Resources\HistoryLookup.ico</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\LookupErrorAggregation.ico">
+      <Link>Resources\LookupErrorAggregation.ico</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\RegExExtraction.ico">
+      <Link>Resources\RegExExtraction.ico</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PP.SSIS.DataFlow.SQL2008.Extensions.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe" -u "$(TargetName)"
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe" -i "$(TargetPath)"
+copy /Y "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\100\DTS\PipelineComponents"
+copy /Y "$(ProjectDir)\$(TargetName).SQL2008.Extensions.xml" "C:\Program Files (x86)\Microsoft SQL Server\100\DTS\UpgradeMappings"
+copy /Y "$(ProjectDir)\$(TargetName).SQL2008.Extensions.xml" "C:\Program Files\Microsoft SQL Server\100\DTS\UpgradeMappings"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

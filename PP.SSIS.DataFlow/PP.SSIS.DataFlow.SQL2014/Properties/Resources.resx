@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ColumnsToXmlInputName" xml:space="preserve">
+    <value>ColumnsToXmlInput</value>
+  </data>
+  <data name="ColumnsToXmlOutputName" xml:space="preserve">
+    <value>ColumnsToXmlOutput</value>
+  </data>
+  <data name="ColumnsToXmlSourceIDDescription" xml:space="preserve">
+    <value>ID of the source of row columns. It allows you to identify the source of the row data.</value>
+  </data>
+  <data name="ColumnsToXmlSourceIDProperty" xml:space="preserve">
+    <value>SourceID</value>
+  </data>
+  <data name="ColumnsToXmlSourceNameDescription" xml:space="preserve">
+    <value>Name of the source of row columns. It allows you to identify the source of the row data.</value>
+  </data>
+  <data name="ColumnsToXmlSourceNameProperty" xml:space="preserve">
+    <value>SourceName</value>
+  </data>
+  <data name="TransformationContactInfo" xml:space="preserve">
+    <value>(c) Pavel Pawlowski</value>
+  </data>
+  <data name="ColumnsToXMLTransformationDescription" xml:space="preserve">
+    <value>Transforms selected input columns to XML</value>
+  </data>
+  <data name="ColumnsToXMLTransformationName" xml:space="preserve">
+    <value>CTX_ColumnsToXml</value>
+  </data>
+  <data name="ErrorAddInput" xml:space="preserve">
+    <value>This component does not allow adding inputs.</value>
+  </data>
+  <data name="ErrorAddOutput" xml:space="preserve">
+    <value>This component does not allow adding outputs.</value>
+  </data>
+  <data name="ErrorDeleteInput" xml:space="preserve">
+    <value>This component does not allow deleting inputs.</value>
+  </data>
+  <data name="ErrorDeleteOutput" xml:space="preserve">
+    <value>This component does not allow deleting outputs.</value>
+  </data>
+  <data name="ErrorIncorrectNumberOfInputs" xml:space="preserve">
+    <value>Incorrect number of Inputs.</value>
+  </data>
+  <data name="ErrorIncorrectNumberOfOutputs" xml:space="preserve">
+    <value>Incorrect number of outputs.</value>
+  </data>
+  <data name="ErrorInputColumnNotInUpstreamComponent" xml:space="preserve">
+    <value>The input column '{0}' does not match a column in the upstream component.</value>
+  </data>
+  <data name="ErrorInvalidDataType" xml:space="preserve">
+    <value>Output column '{0}' has wrong data type.</value>
+  </data>
+  <data name="ErrorInvalidHashType" xml:space="preserve">
+    <value>Invalid Hash Type of output column '{0}'</value>
+  </data>
+  <data name="ErrorInvalidSaveOption" xml:space="preserve">
+    <value>Invalid XxmlSaveOption of output column '{0}'</value>
+  </data>
+  <data name="ErrorOutputColumnPropertyCannotBeChanged" xml:space="preserve">
+    <value>Output property '{0}' cannot be changed.</value>
+  </data>
+  <data name="HashColumnDefaultDesccription" xml:space="preserve">
+    <value>Contains Hash of selected input columns</value>
+  </data>
+  <data name="HashColumnDefaultName" xml:space="preserve">
+    <value>HashValue</value>
+  </data>
+  <data name="HashColumnDescription" xml:space="preserve">
+    <value>Contains Hash of selected input columns</value>
+  </data>
+  <data name="HashColumnsInputName" xml:space="preserve">
+    <value>HashColumnsInput</value>
+  </data>
+  <data name="HashColumnsOutputName" xml:space="preserve">
+    <value>HashColumnsOutput</value>
+  </data>
+  <data name="HashColumnsTransformationDescription" xml:space="preserve">
+    <value>Computes Hash of selected columns based on selected Hash algorithm.</value>
+  </data>
+  <data name="HashColumnsTransformationName" xml:space="preserve">
+    <value>HCT_HashColumns</value>
+  </data>
+  <data name="HashTypePropertyDescription" xml:space="preserve">
+    <value>Select the Hash algorithm to be used</value>
+  </data>
+  <data name="HashAlgorithmPropertyName" xml:space="preserve">
+    <value>HashAlgorithm</value>
+  </data>
+  <data name="XmlColumnDefaultDesccription" xml:space="preserve">
+    <value>Contains XML representing selected input columns</value>
+  </data>
+  <data name="XmlColumnDefaultName" xml:space="preserve">
+    <value>ColumnsXMLData</value>
+  </data>
+  <data name="XmlSaveOptionPropertyName" xml:space="preserve">
+    <value>XmlSaveOptions</value>
+  </data>
+  <data name="XmlSaveOptionsDescriptions" xml:space="preserve">
+    <value>Specifies Serialization option for the XML</value>
+  </data>
+  <data name="ErrorRowNmberInputColumnsInvalid" xml:space="preserve">
+    <value>This component does not support input columns</value>
+  </data>
+  <data name="RowNumberDefaultColumnDescription" xml:space="preserve">
+    <value>Calculates Row Number based on selected properties</value>
+  </data>
+  <data name="RowNumberDefaultColumnName" xml:space="preserve">
+    <value>RowNumber</value>
+  </data>
+  <data name="RowNumberIncrementByPropertyName" xml:space="preserve">
+    <value>IncrementBy</value>
+  </data>
+  <data name="RowNumberTranformationDescription" xml:space="preserve">
+    <value>Generates Row Numbers based on DataType and Increment</value>
+  </data>
+  <data name="RowNumberTransformationName" xml:space="preserve">
+    <value>RNT_RowNumber</value>
+  </data>
+  <data name="ErrorUnsupportedRowNumberIncrementValue" xml:space="preserve">
+    <value>Unsupported value. Increment can be only in days=d, weeks=w,  months=m or years=y</value>
+  </data>
+  <data name="RowNumberIncrementByPropertyDescription" xml:space="preserve">
+    <value>Specifies the increment for teh Row Number</value>
+  </data>
+  <data name="RowNumberInitialValuePropertyDescription" xml:space="preserve">
+    <value>Specifies Initial Value of the RowNumber</value>
+  </data>
+  <data name="RowNumberInitialValuePropertyName" xml:space="preserve">
+    <value>InitialValue</value>
+  </data>
+  <data name="RowNumberInputName" xml:space="preserve">
+    <value>RowNumberInput</value>
+  </data>
+  <data name="RowNumberOutputName" xml:space="preserve">
+    <value>RowNumberOutput</value>
+  </data>
+  <data name="ErrorInputColumnPropertyCannotBeChanged" xml:space="preserve">
+    <value>Input property '{0}' cannot be changed.</value>
+  </data>
+  <data name="ErrorInputMissingSortOrder" xml:space="preserve">
+    <value>Input Column '{0}' is missing SortOrder property</value>
+  </data>
+  <data name="InputSortOrderPropertyDescription" xml:space="preserve">
+    <value>Specifies the Sor Order of the Input Column at which it will be processed during input processing.</value>
+  </data>
+  <data name="InputSortOrderPropertyName" xml:space="preserve">
+    <value>SortOrder</value>
+  </data>
+  <data name="EditorFor" xml:space="preserve">
+    <value>Editor for {0}</value>
+  </data>
+  <data name="HashColumnOutputDescription" xml:space="preserve">
+    <value>Contains columns calculating hashes of input columns</value>
+  </data>
+  <data name="ErrorWrongRuntimeVersion" xml:space="preserve">
+    <value>The runtive version of PP.SSIS.DataFlow if out of date. Please deploye most current version</value>
+  </data>
+  <data name="XmlSerializeDataTypeName" xml:space="preserve">
+    <value>SerializeDataType</value>
+  </data>
+  <data name="XmlSerializeLineageDescription" xml:space="preserve">
+    <value>Specifies whether columns ID and Lineage information should be serialized.</value>
+  </data>
+  <data name="XmlSerializeLineageName" xml:space="preserve">
+    <value>SerializeLineage</value>
+  </data>
+  <data name="XmlStoreDataTypeDescription" xml:space="preserve">
+    <value>Specifies whether data type information should be serialized.</value>
+  </data>
+  <data name="ErrorMetadataErrorCodeDescription" xml:space="preserve">
+    <value>Contains description of the Error Code</value>
+  </data>
+  <data name="ErrorMetadataErrorColumnNameDescription" xml:space="preserve">
+    <value>Contains name of the ErrorColumn</value>
+  </data>
+  <data name="ErrorMetadataIncludeUpstreamComponentNameName" xml:space="preserve">
+    <value>IncludeUpstreamComponentName</value>
+  </data>
+  <data name="ErrorMetadataInputDataColumnName" xml:space="preserve">
+    <value>InputDataColumn</value>
+  </data>
+  <data name="ErrorMetadataOutputColumnTypeName" xml:space="preserve">
+    <value>OutputColumnType</value>
+  </data>
+  <data name="ErrorMetadataDefaultOutputColumnName" xml:space="preserve">
+    <value>ErrorMetadata</value>
+  </data>
+  <data name="ErrorColumnMetadataTransformationDescription" xml:space="preserve">
+    <value>Retrieves ErrorColumnName and ErrorDescription for Error Columns</value>
+  </data>
+  <data name="ErrorColumnMetadataTransformationName" xml:space="preserve">
+    <value>ECM_ErrorColumnMetadata</value>
+  </data>
+  <data name="ErrorInputName" xml:space="preserve">
+    <value>Error Input</value>
+  </data>
+  <data name="ErrorMetadataDataInputDescription" xml:space="preserve">
+    <value>Input for the Main Data</value>
+  </data>
+  <data name="ErrorMetadataDataInputName" xml:space="preserve">
+    <value>Data Input</value>
+  </data>
+  <data name="ErrorMetadataDataOutputDescription" xml:space="preserve">
+    <value>Output for the main upstream data</value>
+  </data>
+  <data name="ErrorMetadataDataOutputName" xml:space="preserve">
+    <value>Data Output</value>
+  </data>
+  <data name="ErrorMetadataErrorInputDescription" xml:space="preserve">
+    <value>Input for upstream Error output to get ErrorColumnName and ErrorDescription</value>
+  </data>
+  <data name="ErrorMetadataErrorOutputDescription" xml:space="preserve">
+    <value>Adds ErrorColumnName and ErrorDescrition to the Error output</value>
+  </data>
+  <data name="ErrorMetadataIncludeUpstremComponentNameDescription" xml:space="preserve">
+    <value>Specifies whether Upstream component name should be included in the ErrorColumnName</value>
+  </data>
+  <data name="ErrorMetadataInputDataColumnDescription" xml:space="preserve">
+    <value>Specifies the input column containing data for the output column</value>
+  </data>
+  <data name="ErrorMetadataOutputColumnTypeDescription" xml:space="preserve">
+    <value>Specifies the type of the coutput column. Whether it is ErrorColumnName or ErrorDescription</value>
+  </data>
+  <data name="ErrorOutputName" xml:space="preserve">
+    <value>Error Output</value>
+  </data>
+  <data name="GetExExtractionTransformationDescription" xml:space="preserve">
+    <value>Extract data from a column based on Regular Expression</value>
+  </data>
+  <data name="RegExExtractionGroupNamePropertyDescription" xml:space="preserve">
+    <value>Name of the Regular Expression Group to which the Output column is Mapped</value>
+  </data>
+  <data name="RegExExtractionGroupNamePropertyName" xml:space="preserve">
+    <value>GroupName</value>
+  </data>
+  <data name="RegExExtractionGroupNumberPropertyDescription" xml:space="preserve">
+    <value>Number of the Regular Expression Group to which the Output Column is Mapped</value>
+  </data>
+  <data name="RegExExtractionGroupNumberPropertyName" xml:space="preserve">
+    <value>GroupNumber</value>
+  </data>
+  <data name="RegExExtractionInputColumnLinageIdPropertyDescription" xml:space="preserve">
+    <value>Lineage ID of the Input column to which th OutputColumn is mapped</value>
+  </data>
+  <data name="RegExExtractionInputColumnLinageIdPropertyName" xml:space="preserve">
+    <value>InputColumnLineageID</value>
+  </data>
+  <data name="RegExExtractionInputDescription" xml:space="preserve">
+    <value>Input for the Regular Expression Extraction transformation</value>
+  </data>
+  <data name="RegExExtractionInputName" xml:space="preserve">
+    <value>RegExInput</value>
+  </data>
+  <data name="RegExExtractionMatchNumberPropertyDescription" xml:space="preserve">
+    <value>Number of the match the OutputColumn should return</value>
+  </data>
+  <data name="RegExExtractionMatchNumberPropertyName" xml:space="preserve">
+    <value>MatchNumber</value>
+  </data>
+  <data name="RegExExtractionOutputDescription" xml:space="preserve">
+    <value>Output of the Regular Expression Extraction transformation</value>
+  </data>
+  <data name="RegExExtractionOutputName" xml:space="preserve">
+    <value>RegExOutput</value>
+  </data>
+  <data name="RegExExtractionTransformationName" xml:space="preserve">
+    <value>REE_RegExExtraction</value>
+  </data>
+  <data name="ErrorAddColumn" xml:space="preserve">
+    <value>This component does not allows adding columns</value>
+  </data>
+  <data name="LookupErrorAggDescription" xml:space="preserve">
+    <value>Aggregates Looup Errors for logging purposes.</value>
+  </data>
+  <data name="LookupErrorAggErrorInputDescription" xml:space="preserve">
+    <value>Provides input of data to aggregate</value>
+  </data>
+  <data name="LookupErrorAggErrorInputName" xml:space="preserve">
+    <value>Upstream data input</value>
+  </data>
+  <data name="LookupErrorAggName" xml:space="preserve">
+    <value>LEA_LookupErrorAggregation</value>
+  </data>
+  <data name="LookupErrorAggErrorOutputName" xml:space="preserve">
+    <value>Upstream data output</value>
+  </data>
+  <data name="LookupErrorAggErrorOutputDescription" xml:space="preserve">
+    <value>Synchronous output for upstream data</value>
+  </data>
+  <data name="LookupErrorAggUpstreamErrorInputNamme" xml:space="preserve">
+    <value>Upstream Aggregated Error Input</value>
+  </data>
+  <data name="LookupErrorAggUpstreamErrorInputDescription" xml:space="preserve">
+    <value>Upstream Aggreagated Error Output of previous LookupErrorAggregation, which llows easy Unioning of Upstream Aggregated errors.</value>
+  </data>
+  <data name="LookupErrorAggAggregatedErrorOutputName" xml:space="preserve">
+    <value>Aggregated Error Output</value>
+  </data>
+  <data name="LookupErrorAggAggregatedErrorOutputDescription" xml:space="preserve">
+    <value>Outputs aggregated error information</value>
+  </data>
+  <data name="ErrorLookupErrorAggInputNotAttached" xml:space="preserve">
+    <value>Lookup Error Input  has to be attached</value>
+  </data>
+  <data name="LookupErrorAggLookupSourceIDName" xml:space="preserve">
+    <value>LookupSourceID</value>
+  </data>
+  <data name="ErrorLookupErrorAggSourceIDNotProvided" xml:space="preserve">
+    <value>LookupSourceID property of the component has to be provided</value>
+  </data>
+  <data name="LookupErrorAggLookpDetaislXmlName" xml:space="preserve">
+    <value>LookupDetailsXml</value>
+  </data>
+  <data name="LookupErrorAggLookpDetaislXmlDescription" xml:space="preserve">
+    <value>Provides information about the lookup key columns in XML Format</value>
+  </data>
+  <data name="LookupErrorAggCountName" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="LookupErrorAggLookupSourceIDDescription" xml:space="preserve">
+    <value>Identification of the Lookup source</value>
+  </data>
+  <data name="LookupErrorAggCountDescription" xml:space="preserve">
+    <value>Calculates the number of lookup errors on the key combination.</value>
+  </data>
+  <data name="ErrorLookupErrorAggUpstreamNotAggregatedLookupError" xml:space="preserve">
+    <value>Upstream Aggregated Error Input is not attached to Aggregated Error Output</value>
+  </data>
+  <data name="LookupErrorAggLookupSourceDescriptionName" xml:space="preserve">
+    <value>LookupSourceDescription</value>
+  </data>
+  <data name="LookupErrorAggLookupSourceDescriptionDescription" xml:space="preserve">
+    <value>Description of the Lookup source</value>
+  </data>
+  <data name="LookupErrorAggKeysCountName" xml:space="preserve">
+    <value>KeysCount</value>
+  </data>
+  <data name="LookupErrorAggKeysCountDescription" xml:space="preserve">
+    <value>Counts total number of unique Key Combinations</value>
+  </data>
+  <data name="LookupErrorAggNullColumnDescription" xml:space="preserve">
+    <value>Process only when selected column is null. Used to detect lookup errors when Ignore is selected in the Lookup Component.</value>
+  </data>
+  <data name="LookupErrorAggNullColumnName" xml:space="preserve">
+    <value>NullColumn</value>
+  </data>
+  <data name="LookupErrorAggIsNullColumnName" xml:space="preserve">
+    <value>IsNullColumn</value>
+  </data>
+  <data name="LookupErrorAggIsNullColumnDescription" xml:space="preserve">
+    <value>Specifies whether Input Column is Null Detection Column</value>
+  </data>
+  <data name="LookupErrorAggIsKeyColumnName" xml:space="preserve">
+    <value>IsKeyColumn</value>
+  </data>
+  <data name="LookupErrorAggIsKeyColumnDescription" xml:space="preserve">
+    <value>Specifies whether the InputColumn is Key Column</value>
+  </data>
+  <data name="RegExExpressionDefaultOutputColumnName" xml:space="preserve">
+    <value>RegEx</value>
+  </data>
+  <data name="RegExExtractionGroupDescription" xml:space="preserve">
+    <value>Specifies the name of the Regular Expression Group to return as the output column</value>
+  </data>
+  <data name="RegExExtractionInputDataColumnDescription" xml:space="preserve">
+    <value>InputColumnName</value>
+  </data>
+  <data name="RegExExtractionInputDataColumnName" xml:space="preserve">
+    <value>Specifies the input column containing data for the output column</value>
+  </data>
+  <data name="RegExExtractionRegularExpressionDescription" xml:space="preserve">
+    <value>Specifies regular expression to be applied on the input column</value>
+  </data>
+  <data name="RegExExtractionRegularExpressionName" xml:space="preserve">
+    <value>RegularExpression</value>
+  </data>
+  <data name="RegExExtractionGroupCaptureNumberPropertyDescription" xml:space="preserve">
+    <value>Specifies the Capture of the CaptureGroup to return in there are more captures of that group. Default 0 means last capture.</value>
+  </data>
+  <data name="RegExExtractionGroupCaptureNumberPropertyName" xml:space="preserve">
+    <value>GroupCaptureNumber</value>
+  </data>
+  <data name="ErrorGrouCaptureNumberLowerThanZero" xml:space="preserve">
+    <value>GroupCaptureNumber must be greater than or equal to 0</value>
+  </data>
+  <data name="ErrorGroupNameNotExistsInRegex" xml:space="preserve">
+    <value>Group Name '{0}' does not exists in Regular Expression '{1}'</value>
+  </data>
+  <data name="ErrorGroupNumberNotExistsInRegex" xml:space="preserve">
+    <value>Group Number '{0}' does not exists in Regular Expression '{1}'</value>
+  </data>
+  <data name="ErrorInputColumnDataTypeNotSupported" xml:space="preserve">
+    <value>DataType [{0}] of Input Column '{1}' with LineageID={2} is not supported</value>
+  </data>
+  <data name="ErrorInputColumnLineageNotExists" xml:space="preserve">
+    <value>There is no InputColumn with LineageID = {0}</value>
+  </data>
+  <data name="ErrorInputColumnNotSpecified" xml:space="preserve">
+    <value>Input column not specified</value>
+  </data>
+  <data name="ErrorMatchNumberLowerThanOne" xml:space="preserve">
+    <value>Match Number must be grater than 0</value>
+  </data>
+  <data name="ErrorValidateColumn" xml:space="preserve">
+    <value>Error Validating Column {0}: {1}</value>
+  </data>
+  <data name="HashColumnHashFieldSeparatorPropertyName" xml:space="preserve">
+    <value>HashFieldSeparator</value>
+  </data>
+  <data name="HashColumnHashImplementationTypePropertyName" xml:space="preserve">
+    <value>HashImplementationType</value>
+  </data>
+  <data name="HashColumnHashInputColumnsPropertyName" xml:space="preserve">
+    <value>HashInputColumns</value>
+  </data>
+  <data name="HashColumnHashOutputDataTypePropertyName" xml:space="preserve">
+    <value>HashOutputDataType</value>
+  </data>
+  <data name="HashColumnNullReplacementValue" xml:space="preserve">
+    <value>NullReplacementValue</value>
+  </data>
+  <data name="HashColumnStringTrimmingPropertyName" xml:space="preserve">
+    <value>StringsTrimming</value>
+  </data>
+  <data name="HashTransformationParallelProcessingPropertyName" xml:space="preserve">
+    <value>ParallelProcessing</value>
+  </data>
+  <data name="XmlInputColumnsPropertyname" xml:space="preserve">
+    <value>XmlInputColumns</value>
+  </data>
+  <data name="XmlSourceIdPropertyName" xml:space="preserve">
+    <value>SourceID</value>
+  </data>
+  <data name="XmlSourceNamePropertyName" xml:space="preserve">
+    <value>SourceName</value>
+  </data>
+  <data name="RegExExtractionRegexOutput" xml:space="preserve">
+    <value>RegexOutput</value>
+  </data>
+  <data name="RegExExtractionRegexOutputType" xml:space="preserve">
+    <value>RegexOutputType</value>
+  </data>
+  <data name="RegExExtractionRegexOptions" xml:space="preserve">
+    <value>RegexOptions</value>
+  </data>
+</root>

@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDF48CF1-4CF7-47BE-8027-97FAEBC51048}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PP.SSIS.ControlFlow.Logging</RootNamespace>
+    <AssemblyName>PP.SSIS.ControlFlow.Logging</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>PP.SSIS.ControlFlow.Logging.SQL2008.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2008</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Dts.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\UI\Abstract\IUIForm.cs">
+      <Link>UI\Abstract\IUIForm.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\UI\Abstract\IUIHelper.cs">
+      <Link>UI\Abstract\IUIHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\UI\Abstract\TaskUI.cs">
+      <Link>UI\Abstract\TaskUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\UI\VariablesToXmlForm.cs">
+      <Link>UI\VariablesToXmlForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\UI\VariablesToXmlForm.designer.cs">
+      <Link>UI\VariablesToXmlForm.designer.cs</Link>
+      <DependentUpon>VariablesToXmlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\UI\VariablesToXmlUI.cs">
+      <Link>UI\VariablesToXmlUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\VariablesToXmlTask.cs">
+      <Link>VariablesToXmlTask.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\UI\VariablesToXmlForm.resx">
+      <Link>UI\VariablesToXmlForm.resx</Link>
+      <DependentUpon>VariablesToXmlForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\Resources\VariablesToXml.ico">
+      <Link>Resources\VariablesToXml.ico</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PP.SSIS.ControlFlow.Logging.SQL2008.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe" -u $(TargetName), Version=1.0.0.0, Culture=neutral, PublicKeyToken=0345354cb1bab4b7
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe" -i "$(TargetPath)"
+copy /Y "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Tasks"
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

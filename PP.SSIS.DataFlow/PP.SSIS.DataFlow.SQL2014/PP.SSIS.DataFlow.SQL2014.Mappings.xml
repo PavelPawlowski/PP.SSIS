@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mappings xmlns="http://www.microsoft.com/SqlServer/Dts/UpgradeMapping.xsd">
+  <!-- PP.SSIS Upgrade Mappings 
+  
+    Upgrade Mappings from SQL 2008 to SQL 2014
+    Upgrade Mappings from SQL 2012 to SQL 2014
+        
+  -->
+
+  <!-- SQL 2008 to SQL 2014 -->
+  <ExtensionMapping tag="PP.SSIS.DataFlow 2008"
+                    oldAssemblyStrongName="PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e17db8c64cd5b65b"
+                    newAssemblyStrongName="PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6926746b040a83a5" />
+
+
+  <!-- SQL 2012 to SQL 2014 -->
+  <ExtensionMapping tag="PP.SSIS.DataFlow 2012"
+                    oldAssemblyStrongName="PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397"
+                    newAssemblyStrongName="PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6926746b040a83a5" />
+
+</Mappings>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mappings xmlns="http://www.microsoft.com/SqlServer/Dts/UpgradeMapping.xsd">
+  <!-- PP.SSIS Upgrade Mappings 
+  
+    Upgrade Mappings from SQL 2008 to SQL 2016
+    Upgrade Mappings from SQL 2012 to SQL 2016
+    Upgrade Mappings from SQL 2014 to SQL 2016
+        
+  -->
+
+  <!-- SQL 2008 to SQL 2016 -->
+
+  <!-- SQL 2012 to SQL 2016 -->
+  <ExtensionMapping tag="PP.SSIS.ControlFlow.Waiting 2012"
+                    oldAssemblyStrongName="PP.SSIS.ControlFlow.Waiting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3f1061c3fd17eb79"
+                    newAssemblyStrongName="PP.SSIS.ControlFlow.Waiting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=828749bdd7917e4b" />
+
+
+  <!-- SQL 2014 to SQL 2016 -->
+  <ExtensionMapping tag="PP.SSIS.ControlFlow.Waiting 2014"
+                    oldAssemblyStrongName="PP.SSIS.ControlFlow.Waiting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d958e388b0ffd524"
+                    newAssemblyStrongName="PP.SSIS.ControlFlow.Waiting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=828749bdd7917e4b" />
+
+</Mappings>

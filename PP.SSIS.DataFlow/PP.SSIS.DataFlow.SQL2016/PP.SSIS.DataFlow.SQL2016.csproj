@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A57DB318-0AA3-41B4-9317-B0709A585F37}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PP.SSIS.DataFlow</RootNamespace>
+    <AssemblyName>PP.SSIS.DataFlow.SQL2016</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SQL2016</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SQL2016</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PP.SSIS.DataFlow.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SqlServer.Dts.Design, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SQLServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PP.SSIS.DataFlow.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\ColumnsToXmlTransformation.cs">
+      <Link>ColumnsToXmlTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\ConvertMetadataInputColumn.cs">
+      <Link>Common\ConvertMetadataInputColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\Crc32.cs">
+      <Link>Common\Crc32.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\FlagsEnumEditor.cs">
+      <Link>Common\FlagsEnumEditor.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\FormInputColumn.cs">
+      <Link>Common\FormInputColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\HashAlgorithmType.cs">
+      <Link>Common\HashAlgorithmType.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\InputBufferColumnInfo.cs">
+      <Link>Common\InputBufferColumnInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\InputColumns.cs">
+      <Link>Common\InputColumns.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\KeyDataHash.cs">
+      <Link>Common\KeyDataHash.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\PipelineUtils.cs">
+      <Link>Common\PipelineUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Common\XmlDataType.cs">
+      <Link>Common\XmlDataType.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\HashColumnsTransformation.cs">
+      <Link>HashColumnsTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\HashColumnsTransformationHelper.cs">
+      <Link>HashColumnsTransformationHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\HistoryLookupTransformation.cs">
+      <Link>HistoryLookupTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\LookupErrorAggregationTransformation.cs">
+      <Link>LookupErrorAggregationTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\Properties\Resources.Designer.cs">
+      <Link>Properties\Resources.Designer.cs</Link>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\RegExExtractionTransformation.cs">
+      <Link>RegExExtractionTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\RowNumberTransformation.cs">
+      <Link>RowNumberTransformation.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\DataFlowUI.cs">
+      <Link>UI\Abstract\DataFlowUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\FormOutput.cs">
+      <Link>UI\Abstract\FormOutput.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\FormOutputColumn.cs">
+      <Link>UI\Abstract\FormOutputColumn.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\INameProvider.cs">
+      <Link>UI\Abstract\INameProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\IUIForm.cs">
+      <Link>UI\Abstract\IUIForm.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\IUIHelper.cs">
+      <Link>UI\Abstract\IUIHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Abstract\UIForm.cs">
+      <Link>UI\Abstract\UIForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\ColumnsToXmlTransformationUI.cs">
+      <Link>UI\ColumnsToXmlTransformationUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\AddHistoryLookupMapping.cs">
+      <Link>UI\Forms\AddHistoryLookupMapping.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\AddHistoryLookupMapping.designer.cs">
+      <Link>UI\Forms\AddHistoryLookupMapping.designer.cs</Link>
+      <DependentUpon>AddHistoryLookupMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\ColumnsToXmlTransformationForm.cs">
+      <Link>UI\Forms\ColumnsToXmlTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\ColumnsToXmlTransformationForm.designer.cs">
+      <Link>UI\Forms\ColumnsToXmlTransformationForm.designer.cs</Link>
+      <DependentUpon>ColumnsToXmlTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HashColumnsTransformationForm.cs">
+      <Link>UI\Forms\HashColumnsTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HashColumnsTransformationForm.designer.cs">
+      <Link>UI\Forms\HashColumnsTransformationForm.designer.cs</Link>
+      <DependentUpon>HashColumnsTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HistoryLookupTransformationForm.cs">
+      <Link>UI\Forms\HistoryLookupTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HistoryLookupTransformationForm.designer.cs">
+      <Link>UI\Forms\HistoryLookupTransformationForm.designer.cs</Link>
+      <DependentUpon>HistoryLookupTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\InputColumnsUIEditorForm.cs">
+      <Link>UI\Forms\InputColumnsUIEditorForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\InputColumnsUIEditorForm.designer.cs">
+      <Link>UI\Forms\InputColumnsUIEditorForm.designer.cs</Link>
+      <DependentUpon>InputColumnsUIEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\ListViewEx.cs">
+      <Link>UI\Forms\ListViewEx.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\LookupErrorAggregationTransformationForm.cs">
+      <Link>UI\Forms\LookupErrorAggregationTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\LookupErrorAggregationTransformationForm.designer.cs">
+      <Link>UI\Forms\LookupErrorAggregationTransformationForm.designer.cs</Link>
+      <DependentUpon>LookupErrorAggregationTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\RegExExtractionTransformationForm.cs">
+      <Link>UI\Forms\RegExExtractionTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\RegExExtractionTransformationForm.designer.cs">
+      <Link>UI\Forms\RegExExtractionTransformationForm.designer.cs</Link>
+      <DependentUpon>RegExExtractionTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\RowNumberTransformationForm.cs">
+      <Link>UI\Forms\RowNumberTransformationForm.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\RowNumberTransformationForm.designer.cs">
+      <Link>UI\Forms\RowNumberTransformationForm.designer.cs</Link>
+      <DependentUpon>RowNumberTransformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\HashColumnsTransformationUI.cs">
+      <Link>UI\HashColumnsTransformationUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\HistoryLookupTransformationUI.cs">
+      <Link>UI\HistoryLookupTransformationUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\LookupErrorAggreagationTransformationUI.cs">
+      <Link>UI\LookupErrorAggreagationTransformationUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\RegExExtractionTransformationUI.cs">
+      <Link>UI\RegExExtractionTransformationUI.cs</Link>
+    </Compile>
+    <Compile Include="..\PP.SSIS.DataFlow.SQL2014\UI\RowNumberTransformationUI.cs">
+      <Link>UI\RowNumberTransformationUI.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Properties\Resources.resx">
+      <Link>Properties\Resources.resx</Link>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\AddHistoryLookupMapping.resx">
+      <Link>UI\Forms\AddHistoryLookupMapping.resx</Link>
+      <DependentUpon>AddHistoryLookupMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\ColumnsToXmlTransformationForm.resx">
+      <Link>UI\Forms\ColumnsToXmlTransformationForm.resx</Link>
+      <DependentUpon>ColumnsToXmlTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HashColumnsTransformationForm.resx">
+      <Link>UI\Forms\HashColumnsTransformationForm.resx</Link>
+      <DependentUpon>HashColumnsTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\HistoryLookupTransformationForm.resx">
+      <Link>UI\Forms\HistoryLookupTransformationForm.resx</Link>
+      <DependentUpon>HistoryLookupTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\InputColumnsUIEditorForm.resx">
+      <Link>UI\Forms\InputColumnsUIEditorForm.resx</Link>
+      <DependentUpon>InputColumnsUIEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\LookupErrorAggregationTransformationForm.resx">
+      <Link>UI\Forms\LookupErrorAggregationTransformationForm.resx</Link>
+      <DependentUpon>LookupErrorAggregationTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\RegExExtractionTransformationForm.resx">
+      <Link>UI\Forms\RegExExtractionTransformationForm.resx</Link>
+      <DependentUpon>RegExExtractionTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\UI\Forms\RowNumberTransformationForm.resx">
+      <Link>UI\Forms\RowNumberTransformationForm.resx</Link>
+      <DependentUpon>RowNumberTransformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\ColumnsToXml.ico">
+      <Link>Resources\ColumnsToXml.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\Crc32.ico">
+      <Link>Resources\Crc32.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\HashColumns.ico">
+      <Link>Resources\HashColumns.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\HistoryLookup.ico">
+      <Link>Resources\HistoryLookup.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\LookupErrorAggregation.ico">
+      <Link>Resources\LookupErrorAggregation.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\RegExExtraction.ico">
+      <Link>Resources\RegExExtraction.ico</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\PP.SSIS.DataFlow.SQL2014\Resources\RowNumber.ico">
+      <Link>Resources\RowNumber.ico</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PP.SSIS.DataFlow.SQL2016.Extensions.xml" />
+    <Content Include="PP.SSIS.DataFlow.SQL2016.Mappings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\x64\gacutil.exe" -u "$(TargetName), Version=1.0.0.0, Culture=neutral, PublicKeyToken=b99aee68060fa342"
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\x64\gacutil.exe" -i "$(TargetPath)"
+copy /Y "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\130\DTS\PipelineComponents"
+copy /Y "$(ProjectDir)\$(TargetName).Extensions.xml" "C:\Program Files (x86)\Microsoft SQL Server\130\DTS\UpgradeMappings"
+copy /Y "$(ProjectDir)\$(TargetName).Mappings.xml" "C:\Program Files (x86)\Microsoft SQL Server\130\DTS\UpgradeMappings"
+copy /Y "$(ProjectDir)\$(TargetName).Extensions.xml" "C:\Program Files\Microsoft SQL Server\130\DTS\UpgradeMappings"
+copy /Y "$(ProjectDir)\$(TargetName).Mappings.xml" "C:\Program Files\Microsoft SQL Server\130\DTS\UpgradeMappings"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
