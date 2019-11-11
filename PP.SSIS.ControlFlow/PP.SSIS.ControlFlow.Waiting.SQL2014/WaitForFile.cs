@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Dts.Runtime;
+using PP.SSIS.ControlFlow.Waiting.Properties;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Xml;
-using Microsoft.SqlServer.Dts.Runtime;
-using PP.SSIS.ControlFlow.Waiting.Properties;
 
 namespace PP.SSIS.ControlFlow.Waiting
 {
@@ -264,58 +262,126 @@ namespace PP.SSIS.ControlFlow.Waiting
         {
             if (node.Name == "WaitForFilesData")
             {
-                foreach (XmlNode nodeData in node.ChildNodes)
+                if (node.HasAttributes) // new Format;
                 {
-                    switch (nodeData.Name)
+                    WaitForFile.ChekFileType chType;
+                    if (Enum.TryParse<WaitForFile.ChekFileType>(node.GetAttribute("checkType"), out chType))
+                        this.CheckType = chType;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckType", node.GetAttribute("checkType")), string.Empty, 0);
+
+                    WaitForFile.FileExistenceType existenceType;
+
+                    if (Enum.TryParse<WaitForFile.FileExistenceType>(node.GetAttribute("existenceType"), out existenceType))
+                        this.ExistenceType = existenceType;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExistenceType", node.GetAttribute("existenceType")), string.Empty, 0);
+
+                    TimeSpan ts;
+                    if (TimeSpan.TryParse(node.GetAttribute("checkTimeoutInterval"), out ts))
+                        this.checkTimeoutInterval = ts;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckTimeout", node.GetAttribute("checkTimeoutInterval")), string.Empty, 0);
+
+                    TimeSpan tst;
+                    if (TimeSpan.TryParse(node.GetAttribute("checkTimeoutTime"), out tst))
+                        this.checkTimeoutTime = tst;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckTimeout", node.GetAttribute("checkTimeoutTime")), string.Empty, 0);
+
+                    int chkInterval;
+
+                    if (int.TryParse(node.GetAttribute("checkInterval"), out chkInterval))
+                        this.CheckInterval = chkInterval;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckInterval", node.GetAttribute("checkInterval")), string.Empty, 0);
+
+
+                    bool timeoutNextDay;
+                    if (bool.TryParse(node.GetAttribute("timeoutNextDayIfTimePassed"), out timeoutNextDay))
+                        this.TimeoutNextDayIfTimePassed = timeoutNextDay;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "TimeoutNextDayIfTimePassed", node.GetAttribute("timeoutNextDayIfTimePassed")), string.Empty, 0);
+
+
+                    foreach (XmlElement nodeData in node.ChildNodes)
                     {
-                        case "checkType":
-                            WaitForFile.ChekFileType chType;
-                            if (Enum.TryParse<WaitForFile.ChekFileType>(nodeData.InnerText, out chType))
-                                this.CheckType = chType;
-                            else
-                                infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckType", node.InnerText), string.Empty, 0);
-                            break;
-                        case "existenceType":
-                            WaitForFile.FileExistenceType existenceType;
-
-                            if (Enum.TryParse<WaitForFile.FileExistenceType>(nodeData.InnerText, out existenceType))
-                                this.ExistenceType = existenceType;
-                            else
-                                infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExistenceType", node.InnerText), string.Empty, 0);
-                            break;
-                        case "checkTimeoutInterval":
-                            TimeSpan ts;
-                            if (TimeSpan.TryParse(nodeData.InnerText, out ts))
-                                this.checkTimeoutInterval = ts;
-                            else
-                                infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckTimeout", node.InnerText), string.Empty, 0);
-                            break;
-                        case "checkTimeoutTime":
-                            TimeSpan tst;
-                            if (TimeSpan.TryParse(nodeData.InnerText, out tst))
-                                this.checkTimeoutTime = tst;
-                            else
-                                infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckTimeout", node.InnerText), string.Empty, 0);
-                            break;
-                        case "checkInterval":
-                            int chkInterval;
-
-                            if (int.TryParse(nodeData.InnerText, out chkInterval))
-                                this.CheckInterval = chkInterval;
-                            else
-                                infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckInterval", node.InnerText), string.Empty, 0);
-                            break;
-                        case "checkFiles":
+                        if (nodeData.Name == "checkFiles")
+                        {
                             List<string> fls = new List<string>();
-                            foreach (XmlNode nd in nodeData.ChildNodes)
+                            foreach (XmlElement nd in nodeData.ChildNodes)
                             {
                                 if (nd.Name == "file")
-                                    fls.Add(nd.InnerText);
+                                    fls.Add(nd.GetAttribute("name"));
                             }
 
                             FilesToCheck = string.Join<string>("|", fls);
-                        break;
-                    }                   
+
+                        }
+                    }
+                }
+                else //old format
+                {
+                    foreach (XmlNode nodeData in node.ChildNodes)
+                    {
+                        switch (nodeData.Name)
+                        {
+                            case "checkType":
+                                WaitForFile.ChekFileType chType;
+                                if (Enum.TryParse<WaitForFile.ChekFileType>(nodeData.InnerText, out chType))
+                                    this.CheckType = chType;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckType", node.InnerText), string.Empty, 0);
+                                break;
+                            case "existenceType":
+                                WaitForFile.FileExistenceType existenceType;
+
+                                if (Enum.TryParse<WaitForFile.FileExistenceType>(nodeData.InnerText, out existenceType))
+                                    this.ExistenceType = existenceType;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExistenceType", node.InnerText), string.Empty, 0);
+                                break;
+                            case "checkTimeoutInterval":
+                                TimeSpan ts;
+                                if (TimeSpan.TryParse(nodeData.InnerText, out ts))
+                                    this.checkTimeoutInterval = ts;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckTimeout", node.InnerText), string.Empty, 0);
+                                break;
+                            case "checkTimeoutTime":
+                                TimeSpan tst;
+                                if (TimeSpan.TryParse(nodeData.InnerText, out tst))
+                                    this.checkTimeoutTime = tst;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckTimeout", node.InnerText), string.Empty, 0);
+                                break;
+                            case "checkInterval":
+                                int chkInterval;
+
+                                if (int.TryParse(nodeData.InnerText, out chkInterval))
+                                    this.CheckInterval = chkInterval;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "CheckInterval", node.InnerText), string.Empty, 0);
+                                break;
+                            case "timeoutNextDayIfTimePassed":
+                                bool timeoutNextDay;
+                                if (bool.TryParse(nodeData.InnerText, out timeoutNextDay))
+                                    this.TimeoutNextDayIfTimePassed = timeoutNextDay;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForFileTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "TimeoutNextDayIfTimePassed", node.InnerText), string.Empty, 0);
+                                break;
+                            case "checkFiles":
+                                List<string> fls = new List<string>();
+                                foreach (XmlNode nd in nodeData.ChildNodes)
+                                {
+                                    if (nd.Name == "file")
+                                        fls.Add(nd.InnerText);
+                                }
+
+                                FilesToCheck = string.Join<string>("|", fls);
+                                break;
+                        }
+                    }
                 }
             }
 
@@ -327,40 +393,25 @@ namespace PP.SSIS.ControlFlow.Waiting
         /// <param name="infoEvents"></param>
         void IDTSComponentPersist.SaveToXML(System.Xml.XmlDocument doc, IDTSInfoEvents infoEvents)
         {
-            XmlNode data = doc.CreateElement("WaitForFilesData");
+            XmlElement data = doc.CreateElement("WaitForFilesData");
             doc.AppendChild(data);
 
-            XmlNode checkTypeNode = doc.CreateElement("checkType");
-            checkTypeNode.InnerText = CheckType.ToString();
-            data.AppendChild(checkTypeNode);
+            data.SetAttribute("checkType", CheckType.ToString());
+            data.SetAttribute("existenceType", ExistenceType.ToString());
+            data.SetAttribute("checkTimeoutInterval", CheckTimeoutInterval.ToString());
+            data.SetAttribute("checkTimeoutTime", checkTimeoutTime.ToString());
+            data.SetAttribute("checkInterval", CheckInterval.ToString());
+            data.SetAttribute("timeoutNextDayIfTimePassed", TimeoutNextDayIfTimePassed.ToString());
 
-            XmlNode existenceTypeNode = doc.CreateElement("existenceType");
-            existenceTypeNode.InnerText = ExistenceType.ToString();
-            data.AppendChild(existenceTypeNode);
-
-            XmlNode chkTimeoutNode = doc.CreateElement("checkTimeoutInterval");
-            chkTimeoutNode.InnerText = CheckTimeoutInterval.ToString();
-            data.AppendChild(chkTimeoutNode);
-
-            XmlNode chkTimeoutTimeNode = doc.CreateElement("checkTimeoutTime");
-            chkTimeoutTimeNode.InnerText = checkTimeoutTime.ToString();
-            data.AppendChild(chkTimeoutTimeNode);
-
-            XmlNode chkIntervalNode = doc.CreateElement("checkInterval");
-            chkIntervalNode.InnerText = CheckInterval.ToString();
-            data.AppendChild(chkIntervalNode);
-
-            XmlNode filesNode = doc.CreateElement("checkFiles");
+            XmlElement filesNode = doc.CreateElement("checkFiles");
+            data.AppendChild(filesNode);
 
             foreach (string file in files)
             {
-                XmlNode fileNode = doc.CreateElement("file");
-                XmlText fileName = doc.CreateTextNode(file);
-                fileNode.AppendChild(fileName);
+                XmlElement fileNode =  doc.CreateElement("file");
+                fileNode.SetAttribute("name", file);
                 filesNode.AppendChild(fileNode);
             }
-            data.AppendChild(filesNode);
-
         }
 
         public override DTSExecResult Validate(Connections connections, VariableDispenser variableDispenser, IDTSComponentEvents componentEvents, IDTSLogging log)

@@ -120,6 +120,9 @@
   <data name="EditorFor" xml:space="preserve">
     <value>Editor for {0}</value>
   </data>
+  <data name="ErrorCouldNotDeserializeProperty" xml:space="preserve">
+    <value>Could not deserialize property '{0}'. Unknown value '{1}'.</value>
+  </data>
   <data name="ErrorInvalidVariables" xml:space="preserve">
     <value>The list of variables to export is invalid</value>
   </data>

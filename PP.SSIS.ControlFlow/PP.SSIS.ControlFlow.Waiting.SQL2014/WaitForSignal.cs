@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using Microsoft.SqlServer.Dts.Runtime;
 using PP.SSIS.ControlFlow.Waiting.Properties;
 
@@ -29,7 +30,7 @@ namespace PP.SSIS.ControlFlow.Waiting
 #endif
         )
     ]
-    public class WaitForSignal : Task
+    public class WaitForSignal : Task, IDTSComponentPersist
     {
 
         private int sleepInterval = 2000;
@@ -174,9 +175,43 @@ namespace PP.SSIS.ControlFlow.Waiting
 
             return isSignalled;
         }
+
+        public void SaveToXML(XmlDocument doc, IDTSInfoEvents infoEvents)
+        {
+            var data = doc.CreateElement("WaitForSignalData");
+            data.SetAttribute("CheckInterval", CheckInterval.ToString());
+            data.SetAttribute("SignalVariable", SignalVariable);
+            doc.AppendChild(data);
+        }
+
+        public void LoadFromXML(XmlElement node, IDTSInfoEvents infoEvents)
+        {
+            if (node.Name == "InnerObject") //OldFormat
+            {
+                foreach (XmlElement child in node.ChildNodes)
+                {
+                    string val = child.GetAttribute("Value");
+
+                    switch (child.Name)
+                    {
+                        case "CheckInterval":
+                            CheckInterval = int.Parse(val);
+                            break;
+                        case "SignalVariable":
+                            SignalVariable = val;
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+            else if (node.Name == "WaitForSignalData") //NewFormat
+            {
+                CheckInterval = int.Parse(node.GetAttribute("CheckInterval"));
+                SignalVariable = node.GetAttribute("SignalVariable");
+
+            }
+        }
     }
-
-
-	
-
 }

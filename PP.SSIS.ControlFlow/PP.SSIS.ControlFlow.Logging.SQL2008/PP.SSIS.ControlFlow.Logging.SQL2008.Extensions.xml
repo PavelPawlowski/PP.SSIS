@@ -7,7 +7,7 @@
     -->
 
   <Tasks>
-    <Task Identifier="PP.SSIS.ControlFlow.Logging.VariablesToXm" Model=".NET">
+    <Task Identifier="PP.SSIS.ControlFlow.Logging.VariablesToXml" Model=".NET">
       <CreationName>PP.SSIS.ControlFlow.Logging.VariablesToXmlTask, PP.SSIS.ControlFlow.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0345354cb1bab4b7</CreationName>
     </Task>
   </Tasks>

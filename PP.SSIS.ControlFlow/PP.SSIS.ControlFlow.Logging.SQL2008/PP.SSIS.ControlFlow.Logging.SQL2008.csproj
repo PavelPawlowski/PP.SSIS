@@ -115,8 +115,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe" -u "$(TargetName), Version=1.0.0.0, Culture=neutral, PublicKeyToken=0345354cb1bab4b7"
-"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe" -i "$(TargetPath)"
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\gacutil.exe" -i "$(TargetPath)" -f
 copy /Y "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Tasks"
 copy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "C:\Program Files (x86)\Microsoft SQL Server\100\DTS\UpgradeMappings"
 copy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "C:\Program Files\Microsoft SQL Server\100\DTS\UpgradeMappings"

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Xml;
 using Microsoft.SqlServer.Dts.Runtime;
 using PP.SSIS.ControlFlow.Waiting.Properties;
 
 namespace PP.SSIS.ControlFlow.Waiting
 {
     [DtsTask(
-        DisplayName="Sleep Task", 
-        Description="Sleeps current execution for specified duration in milliseconds",
-        TaskType="ExecutionControl",
-        TaskContact="Pavel Pawlowski",
-        RequiredProductLevel=DTSProductLevel.None,
+        DisplayName = "Sleep Task",
+        Description = "Sleeps current execution for specified duration in milliseconds",
+        TaskType = "ExecutionControl",
+        TaskContact = "Pavel Pawlowski",
+        RequiredProductLevel = DTSProductLevel.None,
         IconResource = "PP.SSIS.ControlFlow.Waiting.Resources.Sleep.ico"
 #if SQL2017
         ,UITypeName = "PP.SSIS.ControlFlow.Waiting.UI.SleepTaskUI, PP.SSIS.ControlFlow.Waiting.SQL2017, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c298537c023d14ce"
@@ -22,14 +23,14 @@ namespace PP.SSIS.ControlFlow.Waiting
         ,UITypeName = "PP.SSIS.ControlFlow.Waiting.UI.SleepTaskUI, PP.SSIS.ControlFlow.Waiting.SQL2016, Version=1.0.0.0, Culture=neutral, PublicKeyToken=828749bdd7917e4b"
 #endif
 #if SQL2014
-        ,UITypeName = "PP.SSIS.ControlFlow.Waiting.UI.SleepTaskUI, PP.SSIS.ControlFlow.Waiting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d958e388b0ffd524"
+        , UITypeName = "PP.SSIS.ControlFlow.Waiting.UI.SleepTaskUI, PP.SSIS.ControlFlow.Waiting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d958e388b0ffd524"
 #endif
 #if SQL2012
         ,UITypeName = "PP.SSIS.ControlFlow.Waiting.UI.SleepTaskUI, PP.SSIS.ControlFlow.Waiting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=3f1061c3fd17eb79"
 #endif
         )
     ]
-    public class SleepTask : Task
+    public class SleepTask : Task, IDTSComponentPersist
     {
 
         private int sleepInterval = 1000;
@@ -87,9 +88,40 @@ namespace PP.SSIS.ControlFlow.Waiting
 
             return base.Execute(connections, variableDispenser, componentEvents, log, transaction);
         }
+
+        public void SaveToXML(XmlDocument doc, IDTSInfoEvents infoEvents)
+        {
+            var data = doc.CreateElement("SleepTaskData");
+            data.SetAttribute("SleepInterval", SleepInterval.ToString());
+            doc.AppendChild(data);
+        }
+
+        public void LoadFromXML(XmlElement node, IDTSInfoEvents infoEvents)
+        {
+            if (node.Name == "InnerObject") //OldFormat
+            {
+                foreach (XmlElement child in node.ChildNodes)
+                {
+                    string val = child.GetAttribute("Value");
+
+                    switch (child.Name)
+                    {
+                        case "SleepInterval":
+                            SleepInterval = int.Parse(val);
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+            else if (node.Name == "SleepTaskData") //NewFormat
+            {
+                if (!int.TryParse(node.GetAttribute("SleepInterval"), out sleepInterval))
+                    infoEvents.FireError(0, Resources.SleepTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "SleepInterval", node.GetAttribute("SleepInterval")), string.Empty, 0);
+
+
+            }
+        }
     }
-
-
-	
-
 }

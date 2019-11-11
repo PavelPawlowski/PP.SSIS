@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Xml;
 using System.Xml.Linq;
 using Microsoft.SqlServer.Dts.Runtime;
 using PP.SSIS.ControlFlow.Logging.Properties;
@@ -37,7 +38,7 @@ namespace PP.SSIS.ControlFlow.Logging
 #endif
 )
     ]
-    public class VariablesToXmlTask : Task
+    public class VariablesToXmlTask : Task, IDTSComponentPersist
     {
 
         private string _rootElementName = "variables";
@@ -183,7 +184,7 @@ namespace PP.SSIS.ControlFlow.Logging
 
             return vars;
         }
-        
+
         /// <summary>
         /// Validates the Task
         /// </summary>
@@ -454,5 +455,96 @@ namespace PP.SSIS.ControlFlow.Logging
             return base.Execute(connections, variableDispenser, componentEvents, log, transaction);
         }
 
+        public void SaveToXML(XmlDocument doc, IDTSInfoEvents infoEvents)
+        {
+            var data = doc.CreateElement("VaiablesToXmlData");
+            data.SetAttribute("ExportBinaryData", ExportBinaryData.ToString());
+            data.SetAttribute("ExportDataType", ExportDataType.ToString());
+            data.SetAttribute("ExportDescription", ExportDescription.ToString());
+            data.SetAttribute("ExportValueDataType", ExportValueDataType.ToString());
+            data.SetAttribute("ExportVariablePath", ExportVariablePath.ToString());
+            data.SetAttribute("RootElementName", RootElementName);
+            data.SetAttribute("VariableElementName", VariableElementName);
+            data.SetAttribute("VariablesToExport", VariablesToExport);
+            data.SetAttribute("XmlSaveOptions", XmlSaveOptions.ToString());
+            data.SetAttribute("XmlVariable", XmlVariable);
+            doc.AppendChild(data);
+        }
+
+        public void LoadFromXML(XmlElement node, IDTSInfoEvents infoEvents)
+        {
+            if (node.Name == "InnerObject") //OldFormat
+            {
+                foreach (XmlElement child in node.ChildNodes)
+                {
+                    string val = child.GetAttribute("Value");
+
+                    switch (child.Name)
+                    {
+                        case "ExportBinaryData":
+                            ExportBinaryData = val == "0" ? false : true;
+                            break;
+                        case "ExportDataType":
+                            ExportDataType = val == "0" ? false : true;
+                            break;
+                        case "ExportDescription":
+                            ExportDescription = val == "0" ? false : true;
+                            break;
+                        case "ExportValueDataType":
+                            ExportValueDataType = val == "0" ? false : true;
+                            break;
+                        case "ExportVariablePath":
+                            ExportVariablePath = val == "0" ? false : true;
+                            break;
+                        case "RootElementName":
+                            RootElementName = val;
+                            break;
+                        case "VariableElementName":
+                            VariableElementName = val;
+                            break;
+                        case "VariablesToExport":
+                            VariablesToExport = val;
+                            break;
+                        case "XmlSaveOptions":
+                            XmlSaveOptions = (SaveOptions)int.Parse(val);
+                            break;
+                        case "XmlVariable":
+                            XmlVariable = val;
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+            }
+            else if (node.Name == "VaiablesToXmlData") //NewFormat
+            {
+                if (!bool.TryParse(node.GetAttribute("ExportBinaryData"), out _exportBinaryData))
+                        infoEvents.FireError(0, Resources.VariablesToXmlTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExportBinaryData", node.GetAttribute("ExportBinaryData")), string.Empty, 0);
+                if (!bool.TryParse(node.GetAttribute("ExportDataType"), out _exportDataType))
+                    infoEvents.FireError(0, Resources.VariablesToXmlTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExportDataType", node.GetAttribute("ExportDataType")), string.Empty, 0);
+                if (!bool.TryParse(node.GetAttribute("ExportDescription"), out _exportDescription))
+                        infoEvents.FireError(0, Resources.VariablesToXmlTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExportDescription", node.GetAttribute("ExportDescription")), string.Empty, 0);
+                if (!bool.TryParse(node.GetAttribute("ExportValueDataType"), out _exportValueDataType))
+                        infoEvents.FireError(0, Resources.VariablesToXmlTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExportValueDataType", node.GetAttribute("ExportValueDataType")), string.Empty, 0);
+                if (!bool.TryParse(node.GetAttribute("ExportVariablePath"), out _exportVariablePath))
+                        infoEvents.FireError(0, Resources.VariablesToXmlTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "ExportVariablePath", node.GetAttribute("ExportVariablePath")), string.Empty, 0);
+
+                try
+                {
+                    XmlSaveOptions = (SaveOptions)Enum.Parse(typeof(SaveOptions), node.GetAttribute("XmlSaveOptions"));
+                }
+                catch
+                {
+
+                    infoEvents.FireError(0, Resources.VariablesToXmlTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "XmlSaveOptions", node.GetAttribute("XmlSaveOptions")), string.Empty, 0);
+                }
+
+                RootElementName = node.GetAttribute("RootElementName");
+                VariableElementName = node.GetAttribute("VariableElementName");
+                VariablesToExport = node.GetAttribute("VariablesToExport");
+                XmlVariable = node.GetAttribute("XmlVariable");
+            }
+        }
     }
 }

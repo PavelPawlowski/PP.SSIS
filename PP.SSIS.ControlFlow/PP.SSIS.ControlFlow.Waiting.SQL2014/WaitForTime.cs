@@ -127,24 +127,41 @@ namespace PP.SSIS.ControlFlow.Waiting
         {
             if (node.Name == "WaitForTimeData")
             {
-                foreach (XmlNode nd in node.ChildNodes)
+                if (node.HasAttributes) //new format
                 {
-                    switch (nd.Name)
+                    TimeSpan ts;
+                    if (TimeSpan.TryParse(node.GetAttribute("waitTime"), out ts))
+                        WaitTime = ts;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForTimeTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "WaitTime", node.GetAttribute("checkType")), string.Empty, 0);
+
+                    bool wnd;
+                    if (bool.TryParse(node.GetAttribute("waitNextDayIfTimePassed"), out wnd))
+                        WaitNextDayIfTimePassed = wnd;
+                    else
+                        infoEvents.FireError(0, Resources.WaitForTimeTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "WaitNextDayIfTimePassed", node.GetAttribute("waitNextDayIfTimePassed")), string.Empty, 0);
+                }
+                else //old format
+                {
+                    foreach (XmlNode nd in node.ChildNodes)
                     {
-                        case "waitTime":
-                            TimeSpan ts;
-                            if (TimeSpan.TryParse(nd.InnerText, out ts))
-                                WaitTime = ts;
-                            else
-                                infoEvents.FireError(0, Resources.WaitForTimeTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "WaitTime", nd.InnerText), string.Empty, 0);
-                            break;
-                        case "waitNextDayIfTimePassed":
-                            bool wnd;
-                            if (bool.TryParse(nd.InnerText, out wnd))
-                                WaitNextDayIfTimePassed = wnd;
-                            else
-                                infoEvents.FireError(0, Resources.WaitForTimeTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "WaitNextDayIfTimePassed", nd.InnerText), string.Empty, 0);
-                            break;
+                        switch (nd.Name)
+                        {
+                            case "waitTime":
+                                TimeSpan ts;
+                                if (TimeSpan.TryParse(nd.InnerText, out ts))
+                                    WaitTime = ts;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForTimeTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "WaitTime", nd.InnerText), string.Empty, 0);
+                                break;
+                            case "waitNextDayIfTimePassed":
+                                bool wnd;
+                                if (bool.TryParse(nd.InnerText, out wnd))
+                                    WaitNextDayIfTimePassed = wnd;
+                                else
+                                    infoEvents.FireError(0, Resources.WaitForTimeTaskName, string.Format(Resources.ErrorCouldNotDeserializeProperty, "WaitNextDayIfTimePassed", nd.InnerText), string.Empty, 0);
+                                break;
+                        }
                     }
                 }
             }
@@ -157,16 +174,11 @@ namespace PP.SSIS.ControlFlow.Waiting
         /// <param name="infoEvents"></param>
         void IDTSComponentPersist.SaveToXML(System.Xml.XmlDocument doc, IDTSInfoEvents infoEvents)
         {
-            XmlNode data = doc.CreateElement("WaitForTimeData");
+            XmlElement data = doc.CreateElement("WaitForTimeData");
             doc.AppendChild(data);
 
-            XmlNode wt = doc.CreateElement("waitTime");
-            wt.InnerText = waitTime.ToString();
-            data.AppendChild(wt);
-
-            XmlNode wnd = doc.CreateElement("waitNextDayIfTimePassed");
-            wnd.InnerText = WaitNextDayIfTimePassed.ToString();
-            data.AppendChild(wnd);
+            data.SetAttribute("waitTime", waitTime.ToString());
+            data.SetAttribute("waitNextDayIfTimePassed", WaitNextDayIfTimePassed.ToString());
         }
 
         /// <summary>
@@ -237,8 +249,4 @@ namespace PP.SSIS.ControlFlow.Waiting
 
 
     }
-
-
-	
-
 }

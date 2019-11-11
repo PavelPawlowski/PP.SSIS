@@ -19,7 +19,7 @@ namespace PP.SSIS.ControlFlow.Logging.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -66,6 +66,15 @@ namespace PP.SSIS.ControlFlow.Logging.Properties {
         internal static string EditorFor {
             get {
                 return ResourceManager.GetString("EditorFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not deserialize property &apos;{0}&apos;. Unknown value &apos;{1}&apos;..
+        /// </summary>
+        internal static string ErrorCouldNotDeserializeProperty {
+            get {
+                return ResourceManager.GetString("ErrorCouldNotDeserializeProperty", resourceCulture);
             }
         }
         
