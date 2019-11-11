@@ -26,7 +26,7 @@ using System.Runtime.CompilerServices;
 using System.Xml.Linq;
 using System.Drawing.Design;
 
-#if SQL2008 || SQL2008R2 || SQL2012 || SQL2014 || SQL2016 || SQL2017
+
 using IDTSOutput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutput100;
 using IDTSCustomProperty = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSCustomProperty100;
 using IDTSOutputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutputColumn100;
@@ -38,7 +38,6 @@ using IDTSDesigntimeComponent = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSDes
 using IDTSVirtualInputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSVirtualInputColumn100;
 using PP.SSIS.DataFlow.Common;
 using System.Reflection;
-#endif
 
 namespace PP.SSIS.DataFlow.UI
 {

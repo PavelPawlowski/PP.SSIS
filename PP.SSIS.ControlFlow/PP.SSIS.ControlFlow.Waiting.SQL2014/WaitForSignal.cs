@@ -16,6 +16,9 @@ namespace PP.SSIS.ControlFlow.Waiting
         TaskContact="Pavel Pawlowski",
         RequiredProductLevel=DTSProductLevel.None,
         IconResource = "PP.SSIS.ControlFlow.Waiting.Resources.WaitFor.ico"
+#if SQL2019
+        ,UITypeName = "PP.SSIS.ControlFlow.Waiting.UI.WaitForSignalUI, PP.SSIS.ControlFlow.Waiting.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c298537c023d14ce"
+#endif
 #if SQL2017
         ,UITypeName = "PP.SSIS.ControlFlow.Waiting.UI.WaitForSignalUI, PP.SSIS.ControlFlow.Waiting.SQL2017, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c298537c023d14ce"
 #endif

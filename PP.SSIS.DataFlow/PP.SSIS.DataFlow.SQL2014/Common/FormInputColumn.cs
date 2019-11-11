@@ -16,7 +16,7 @@ using System.Text;
 using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
 using PP.SSIS.DataFlow.Properties;
 
-#if SQL2008 || SQL2008R2 || SQL2012 || SQL2014 || SQL2016 || SQL2017
+#if SQL2008 || SQL2008R2 || SQL2012 || SQL2014 || SQL2016 || SQL2017 || SQL2019
 using IDTSOutput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutput100;
     using IDTSCustomProperty = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSCustomProperty100;
     using IDTSOutputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutputColumn100;

@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.DataFlow.SQL2014", "PP.SSIS.DataFlow.SQL2014\PP.SSIS.DataFlow.SQL2014.csproj", "{BE775079-E097-4070-884E-38F39B6EC771}"
 EndProject
@@ -11,6 +11,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.DataFlow.SQL2016", "PP.SSIS.DataFlow.SQL2016\PP.SSIS.DataFlow.SQL2016.csproj", "{A57DB318-0AA3-41B4-9317-B0709A585F37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.DataFlow.SQL2017", "PP.SSIS.DataFlow.SQL2017\PP.SSIS.DataFlow.SQL2017.csproj", "{1F73DD34-C615-4125-9858-7CBF78259C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.DataFlow.SQL2019", "PP.SSIS.DataFlow.SQL2019\PP.SSIS.DataFlow.SQL2019.csproj", "{D011D4C2-81EC-49F6-B8F3-FD047D6B3296}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,8 +39,15 @@ Global
 		{1F73DD34-C615-4125-9858-7CBF78259C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F73DD34-C615-4125-9858-7CBF78259C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F73DD34-C615-4125-9858-7CBF78259C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D011D4C2-81EC-49F6-B8F3-FD047D6B3296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D011D4C2-81EC-49F6-B8F3-FD047D6B3296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D011D4C2-81EC-49F6-B8F3-FD047D6B3296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D011D4C2-81EC-49F6-B8F3-FD047D6B3296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE7E8426-AA1C-4C53-A010-8BD292F9DF03}
 	EndGlobalSection
 EndGlobal

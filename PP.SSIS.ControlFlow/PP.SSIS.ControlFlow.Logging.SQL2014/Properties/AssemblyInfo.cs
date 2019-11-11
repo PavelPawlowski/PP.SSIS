@@ -2,6 +2,17 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+#if SQL2019
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("PP.SSIS.ControlFlow.Logging.SQL2019")]
+[assembly: AssemblyProduct("PP.SSIS.ControlFlow.Logging.SQL2019")]
+[assembly: AssemblyDescription("Custom SSIS 2019 Control Flow Components for Logging by Pavel Pawlowski")]
+
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("8D648E07-D54E-4F06-AB49-0FBFF1F13D18")]
+#endif
 #if SQL2017
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information

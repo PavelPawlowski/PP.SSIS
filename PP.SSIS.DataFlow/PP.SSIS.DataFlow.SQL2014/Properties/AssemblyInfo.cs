@@ -5,6 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+#if SQL2019
+    [assembly: AssemblyTitle("PP.SSIS.DataFlow.SQL2019")]
+    [assembly: AssemblyProduct("PP.SSIS.DataFlow.SQL2019")]
+    [assembly: AssemblyDescription("Custom SSIS 2019 Data Flow Components by Pavel Pawlowski")]
+#endif
 #if SQL2017
     [assembly: AssemblyTitle("PP.SSIS.DataFlow.SQL2017")]
     [assembly: AssemblyProduct("PP.SSIS.DataFlow.SQL2017")]
@@ -35,7 +40,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyCompany("Pavel Pawlowski")]
-[assembly: AssemblyCopyright("Copyright © 2015-2016 Pavel Pawlowski")]
+[assembly: AssemblyCopyright("Copyright © 2015-2019 Pavel Pawlowski")]
 
 
 [assembly: AssemblyConfiguration("")]

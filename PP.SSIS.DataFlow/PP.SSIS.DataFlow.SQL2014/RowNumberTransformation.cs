@@ -23,14 +23,12 @@ using System.IO;
 using PP.SSIS.DataFlow.Properties;
 using PP.SSIS.DataFlow.Common;
 
-#if SQL2008 || SQL2012 || SQL2014 || SQL2016 || SQL2017
 using IDTSOutput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutput100;
 using IDTSCustomProperty = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSCustomProperty100;
 using IDTSOutputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutputColumn100;
 using IDTSInput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSInput100;
 using IDTSInputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSInputColumn100;
 using IDTSVirtualInput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSVirtualInput100;
-#endif
 
 namespace PP.SSIS.DataFlow
 {
@@ -45,6 +43,9 @@ namespace PP.SSIS.DataFlow
         , IconResource = "PP.SSIS.DataFlow.Resources.RowNumber.ico"
         , CurrentVersion = 1
 
+#if SQL2019
+        , UITypeName = "PP.SSIS.DataFlow.UI.RowNumberTransformationUI, PP.SSIS.DataFlow.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c"
+#endif
 #if SQL2017
         , UITypeName = "PP.SSIS.DataFlow.UI.RowNumberTransformationUI, PP.SSIS.DataFlow.SQL2017, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c"
 #endif

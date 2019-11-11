@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mappings xmlns="http://www.microsoft.com/SqlServer/Dts/UpgradeMapping.xsd">
+  <!-- PP.SSIS Upgrade Mappings 
+  
+    Upgrade Mappings from SQL 2008 to SQL 2019
+    Upgrade Mappings from SQL 2012 to SQL 2019
+    Upgrade Mappings from SQL 2014 to SQL 2019
+    Upgrade Mappings from SQL 2016 to SQL 2019     
+    Upgrade Mappings from SQL 2017 to SQL 2019
+  -->
+
+  <!-- SQL 2008 to SQL 2019 -->
+  <ExtensionMapping tag="PP.SSIS.DataFlow 2008"
+                    oldAssemblyStrongName="PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e17db8c64cd5b65b"
+                    newAssemblyStrongName="PP.SSIS.DataFlow.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c" />
+
+  <!-- SQL 2012 to SQL 2019 -->
+  <ExtensionMapping tag="PP.SSIS.DataFlow 2012"
+                    oldAssemblyStrongName="PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c8e167588e3f3397"
+                    newAssemblyStrongName="PP.SSIS.DataFlow.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c" />
+
+
+  <!-- SQL 2014 to SQL 2019 -->
+  <ExtensionMapping tag="PP.SSIS.DataFlow 2014"
+                    oldAssemblyStrongName="PP.SSIS.DataFlow, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6926746b040a83a5"
+                    newAssemblyStrongName="PP.SSIS.DataFlow.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c" />
+
+
+  <!-- SQL 2016 to SQL 2019 -->
+  <ExtensionMapping tag="PP.SSIS.DataFlow 2016"
+                    oldAssemblyStrongName="PP.SSIS.DataFlow.SQL2016, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b99aee68060fa342"
+                    newAssemblyStrongName="PP.SSIS.DataFlow.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c" />
+
+  <!-- SQL 2017 to SQL 2019 -->
+  <ExtensionMapping tag="PP.SSIS.DataFlow 2017"
+                    oldAssemblyStrongName="PP.SSIS.DataFlow.SQL2017, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c"
+                    newAssemblyStrongName="PP.SSIS.DataFlow.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c" />
+</Mappings>

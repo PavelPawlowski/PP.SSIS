@@ -19,7 +19,7 @@ using System.Globalization;
 using PP.SSIS.DataFlow.Properties;
 using PP.SSIS.DataFlow.Common;
 
-#if SQL2008 || SQL2008R2 || SQL2012 || SQL2014 || SQL2016 || SQL2017
+
 using IDTSOutput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutput100;
 using IDTSCustomProperty = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSCustomProperty100;
 using IDTSOutputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSOutputColumn100;
@@ -27,7 +27,7 @@ using IDTSInput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSInput100;
 using IDTSInputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSInputColumn100;
 using IDTSVirtualInput = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSVirtualInput100;
 using IDTSVirtualInputColumn = Microsoft.SqlServer.Dts.Pipeline.Wrapper.IDTSVirtualInputColumn100;
-#endif
+
 
 
 namespace PP.SSIS.DataFlow
@@ -40,6 +40,9 @@ namespace PP.SSIS.DataFlow
         , CurrentVersion = 2
         , SupportsBackPressure = true
 
+#if SQL2019
+    , UITypeName = "PP.SSIS.DataFlow.UI.HistoryLookupTransformationUI, PP.SSIS.DataFlow.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c"
+#endif
 #if SQL2017
     , UITypeName = "PP.SSIS.DataFlow.UI.HistoryLookupTransformationUI, PP.SSIS.DataFlow.SQL2017, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b68691a82d4fb69c"
 #endif

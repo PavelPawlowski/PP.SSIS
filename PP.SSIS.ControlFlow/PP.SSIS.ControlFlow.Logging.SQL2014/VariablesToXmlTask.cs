@@ -21,6 +21,9 @@ namespace PP.SSIS.ControlFlow.Logging
         TaskContact="Pavel Pawlowski",
         RequiredProductLevel=DTSProductLevel.None,
         IconResource = "PP.SSIS.ControlFlow.Logging.Resources.VariablesToXml.ico"
+#if SQL2019
+        , UITypeName = "PP.SSIS.ControlFlow.Logging.UI.VariablesToXmlUI, PP.SSIS.ControlFlow.Logging.SQL2019, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6088ee5fd022ff04"
+#endif
 #if SQL2017
         , UITypeName = "PP.SSIS.ControlFlow.Logging.UI.VariablesToXmlUI, PP.SSIS.ControlFlow.Logging.SQL2017, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6088ee5fd022ff04"
 #endif
