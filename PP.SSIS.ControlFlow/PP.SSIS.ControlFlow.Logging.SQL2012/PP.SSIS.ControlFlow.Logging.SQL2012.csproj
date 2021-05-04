@@ -36,6 +36,15 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>PP.SSIS.ControlFlow.Logging.SQL2012.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local-Release|AnyCPU' ">
+    <OutputPath>bin\Local-Release\</OutputPath>
+    <DefineConstants>TRACE;SQL2012</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SqlServer.Dts.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -109,7 +118,7 @@
     <Content Include="PP.SSIS.ControlFlow.Logging.SQL2012.Mappings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Local-Release'">
     <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\gacutil.exe" -i "$(TargetPath)" -f
 xcopy /Y "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Tasks\"
 xcopy /Y "$(ProjectDir)$(TargetName).SQL2012.Extensions.xml" "C:\Program Files (x86)\Microsoft SQL Server\110\DTS\UpgradeMappings\"
