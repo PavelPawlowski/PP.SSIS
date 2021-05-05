@@ -1,0 +1,439 @@
+# .NET Desktop
+# Build and run tests for .NET Desktop or Windows classic desktop solutions.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
+
+name: 'PP.SSIS_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)'
+
+trigger:
+- master
+
+pool: 'SelfHosted-Azure'
+
+variables:
+  solutionControlFlow: '**/PP.SSIS.ControlFlow.sln'
+  solutionDataFlow: '**/PP.SSIS.DataFlow.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+#- task: NuGetToolInstaller@1
+
+#- task: NuGetCommand@2
+#  inputs:
+#    restoreSolution: '$(solution)'
+
+######################
+# BUILDING SOLUTIONS #
+######################
+
+#Control Flow
+- task: VSBuild@1
+  displayName: Build PP.SSIS.ControlFlow
+  inputs:
+    solution: '$(solutionControlFlow)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+#Data Flow
+- task: VSBuild@1
+  displayName: Build PP.SSIS.DataFlow
+  inputs:
+    solution: '$(solutionDataFlow)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+###############################
+# COPY FILES For Control FLow #
+###############################
+
+# Copy Binaries for Control Flow Logging
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2008'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2008'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\100\DTS\Tasks'
+    CleanTargetFolder: true
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2012'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2012'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\110\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2014'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2014'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\120\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2016'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2016'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2017'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2017'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\140\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2019'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2019'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\150\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+# Copy Binaries for Control Flow Waiting
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2012'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2012'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\110\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2014'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2014'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\120\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2016'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2016'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2017'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2017'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\140\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2019'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2019'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\150\DTS\Tasks'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+
+# Copy UpgradeMappings for Control Flow Logging
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Logging.SQL2008'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2008'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\100\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Logging.SQL2012'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2012'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\110\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Logging.SQL2014'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2014'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\120\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Logging.SQL2016'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2016'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Logging.SQL2017'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2017'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Logging.SQL2019'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2019'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\150\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+# Copy UpgradeMappings for Control Flow Waiting
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Waiting.SQL2012'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2012'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\110\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Waiting.SQL2014'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2014'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\120\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Waiting.SQL2016'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2016'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Waiting.SQL2017'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2017'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.ControlFlow.Waiting.SQL2019'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2019'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\150\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+############################
+# COPY FILES For Data FLow #
+############################
+
+# Copy Binaries for Data Flow
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2008'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2008'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\100\DTS\PipelineComponents'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2012'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2012'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\110\DTS\PipelineComponents'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2014'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2014'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\120\DTS\PipelineComponents'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2016'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2016'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\130\DTS\PipelineComponents'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2017'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2017'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\140\DTS\PipelineComponents'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2019'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2019'
+    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\150\DTS\PipelineComponents'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+# Copy UpgradeMappings for Data Flow
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2008'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2008'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\100\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2012'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2012'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\110\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2014'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2014'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\120\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2016'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2016'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\130\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2017'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2017'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\140\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2019'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2019'
+    Contents: |
+      **\*.Extensions.xml
+      **\*.Mappings.xml
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\150\DTS\UpgradeMappings'
+    CleanTargetFolder: false
+    flattenFolders: true
+
+###############################
+# Copy Deployment batch files #
+###############################
+
+- task: CopyFiles@2
+  displayName: 'Copy Deployment Batch Control Flow'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2014'
+    Contents: '**\*.bat'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow'
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy Deployment Batch Data Flow'
+  inputs:
+    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2014'
+    Contents: '**\*.bat'
+    TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow'
+    flattenFolders: true
+
+#####################
+# Build ZIP Archive #
+#####################
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber).zip'
+    replaceExistingArchive: true
+
+#####################
+# Deploy Artifact #
+#####################
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'PP.SSIS'
+    publishLocation: 'Container'
