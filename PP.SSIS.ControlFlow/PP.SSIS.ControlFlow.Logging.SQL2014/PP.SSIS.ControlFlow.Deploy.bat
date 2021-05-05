@@ -7,12 +7,18 @@ echo PP.SSIS.ControlFlow Deploy Utilitiy
 echo ***********************************
 echo.
 
+REM Set gacutil to second parameter
+set gacutil="%2"
+
 REM Detect Gacutil
-set gacutil=
-FOR /R "C:\Program Files (x86)\Microsoft SDKs\Windows" %%a  in (gacutil.exe) DO (
-    IF EXIST "%%~fa" (
-        SET gacutil=%%~fa
-    )
+if "%gacutil%" == """" set gacutil=
+if "%gacutil%" == "" (
+    echo Detecting gacutil
+	FOR /R "C:\Program Files (x86)\Microsoft SDKs\Windows" %%a  in (gacutil.exe) DO (
+		IF EXIST "%%~fa" (
+			SET gacutil=%%~fa
+		)
+	)
 )
 
 if exist "%gacutil%" (
@@ -53,11 +59,12 @@ goto :EOF
 REM PRINT USAGE help
 echo.
 echo Usage:
-echo PP.SSIS.ControlFlow.Deploy.bat versionToDeploy
+echo PP.SSIS.ControlFlow.Deploy.bat versionToDeploy gacutilLocation
 echo.
 echo Example:
-echo PP.SSIS.ControlFlow.Deploy.bat all             (Install all versions of components, detect gacutil)
-echo PP.SSIS.ControlFlow.Deploy.bat 2012            (Install 2012 versions of components, detect gacutil)
+echo PP.SSIS.ControlFlow.Deploy.bat all                           (Install all versions of components, detect gacutil)
+echo PP.SSIS.ControlFlow.Deploy.bat 2012 "C:\tools\gacutil.exe"   (Install 2012 versions of components, use gacutil provided)
+echo PP.SSIS.ControlFlow.Deploy.bat 2012                          (Install 2012 versions of components, detect gacutil)
 
 REM PRINT Availale versions
 echo.
