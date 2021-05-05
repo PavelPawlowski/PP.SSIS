@@ -52,7 +52,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2008'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2008'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\100\DTS\Tasks'
     CleanTargetFolder: true
     flattenFolders: true
@@ -61,7 +61,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2012'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2012'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\110\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -70,7 +70,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2014'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2014'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\120\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -79,7 +79,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2016'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2016'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -88,7 +88,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2017'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2017'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\140\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -97,7 +97,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Logging.SQL2019'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2019'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\150\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -107,7 +107,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2012'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2012'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\110\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -116,7 +116,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2014'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2014'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\120\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -125,7 +125,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2016'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2016'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\130\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -134,7 +134,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2017'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2017'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\140\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -143,7 +143,7 @@ steps:
   displayName: 'Copy binaries PP.SSIS.ControlFlow.Waiting.SQL2019'
   inputs:
     SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Waiting.SQL2019'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow\150\DTS\Tasks'
     CleanTargetFolder: false
     flattenFolders: true
@@ -280,8 +280,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2008'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2008'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2008'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\100\DTS\PipelineComponents'
     CleanTargetFolder: false
     flattenFolders: true
@@ -289,8 +289,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2012'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2012'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2012'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\110\DTS\PipelineComponents'
     CleanTargetFolder: false
     flattenFolders: true
@@ -298,8 +298,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2014'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2014'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2014'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\120\DTS\PipelineComponents'
     CleanTargetFolder: false
     flattenFolders: true
@@ -307,8 +307,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2016'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2016'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2016'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\130\DTS\PipelineComponents'
     CleanTargetFolder: false
     flattenFolders: true
@@ -316,8 +316,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2017'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2017'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2017'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\140\DTS\PipelineComponents'
     CleanTargetFolder: false
     flattenFolders: true
@@ -325,8 +325,8 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy binaries PP.SSIS.DataFlow.SQL2019'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2019'
-    Contents: '**\bin\$(BuildConfiguration)\*.dll'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2019'
+    Contents: '**\bin\$(BuildConfiguration)\PP.SSIS.*.dll'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow\150\DTS\PipelineComponents'
     CleanTargetFolder: false
     flattenFolders: true
@@ -335,7 +335,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2008'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2008'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2008'
     Contents: |
       **\*.Extensions.xml
       **\*.Mappings.xml
@@ -346,7 +346,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2012'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2012'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2012'
     Contents: |
       **\*.Extensions.xml
       **\*.Mappings.xml
@@ -357,7 +357,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2014'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2014'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2014'
     Contents: |
       **\*.Extensions.xml
       **\*.Mappings.xml
@@ -368,7 +368,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2016'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2016'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2016'
     Contents: |
       **\*.Extensions.xml
       **\*.Mappings.xml
@@ -379,7 +379,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2017'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2017'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2017'
     Contents: |
       **\*.Extensions.xml
       **\*.Mappings.xml
@@ -390,7 +390,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Mappings PP.SSIS.DataFlow.SQL2019'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2019'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2019'
     Contents: |
       **\*.Extensions.xml
       **\*.Mappings.xml
@@ -413,7 +413,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Deployment Batch Data Flow'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.DataFlow.SQL2014'
+    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2014'
     Contents: '**\*.bat'
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow'
     flattenFolders: true
