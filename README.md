@@ -2,7 +2,7 @@
 
 This project contains some useful custom SSIS DataFlow and Control Flow components for usage in SSIS Package.
 
-Components are designed to work with SSIS 2008 - SSIS 2017
+Components are designed to work with SSIS 2008 - SSIS 2019
 
 ## Data FLow Components
 
