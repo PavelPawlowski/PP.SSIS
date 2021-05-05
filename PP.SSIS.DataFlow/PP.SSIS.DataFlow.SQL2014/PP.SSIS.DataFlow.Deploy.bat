@@ -2,9 +2,9 @@
 SET target64="C:\Program Files\Microsoft SQL Server"
 SET target32="C:\Program Files (x86)\Microsoft SQL Server"
 
-echo ***********************************
-echo PP.SSIS.ControlFlow Deploy Utilitiy
-echo ***********************************
+echo ********************************
+echo PP.SSIS.DataFlow Deploy Utilitiy
+echo ********************************
 echo.
 
 REM Detect Gacutil
@@ -53,11 +53,11 @@ goto :EOF
 REM PRINT USAGE help
 echo.
 echo Usage:
-echo PP.SSIS.ControlFlow.Deploy.bat versionToDeploy
+echo PP.SSIS.DataFlow.Deploy.bat versionToDeploy
 echo.
 echo Example:
-echo PP.SSIS.ControlFlow.Deploy.bat all             (Install all versions of components, detect gacutil)
-echo PP.SSIS.ControlFlow.Deploy.bat 2012            (Install 2012 versions of components, detect gacutil)
+echo PP.SSIS.DataFlow.Deploy.bat all             (Install all versions of components, detect gacutil)
+echo PP.SSIS.DataFlow.Deploy.bat 2012            (Install 2012 versions of components, detect gacutil)
 
 REM PRINT Availale versions
 echo.
@@ -90,21 +90,15 @@ REM Deployment of single parameterized version of components
 :DeploySingle
 if exist .\%version%\ (
 	echo ---------------------------------------------
-	echo Deploying PP.SSIS.ControlFlow %versionRelease% components
+	echo Deploying PP.SSIS.DataFlow %versionRelease% components
 	echo ---------------------------------------------
 	xcopy "%version%" %target64%\%version% /S /Y /F
 	xcopy "%version%" %target32%\%version% /S /Y /F
-	if exist ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Logging.dll" (
-		"%gacutil%" /i ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Logging.dll" /f
+	if exist ".\%version%\DTS\PipelineComponents\PP.SSIS.DataFlow.dll" (
+		"%gacutil%" /i ".\%version%\DTS\PipelineComponents\PP.SSIS.DataFlow.dll" /f
 	)
-	if exist ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Waiting.dll" (
-		"%gacutil%" /i ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Waiting.dll" /f
-	)
-	if exist ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Logging.SQL%versionRelease%.dll" (
-		"%gacutil%" /i ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Logging.SQL%versionRelease%.dll" /f
-	)
-	if exist ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Waiting.SQL%versionRelease%.dll" (
-		"%gacutil%" /i ".\%version%\DTS\Tasks\PP.SSIS.ControlFlow.Waiting.SQL%versionRelease%.dll" /f
+	if exist ".\%version%\DTS\PipelineComponents\PP.SSIS.DataFlow.SQL%versionRelease%.dll" (
+		"%gacutil%" /i ".\%version%\DTS\PipelineComponents\PP.SSIS.DataFlow.SQL%versionRelease%.dll" /f
 	)
 )
 

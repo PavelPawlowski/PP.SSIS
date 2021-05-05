@@ -127,16 +127,11 @@
   </Target>
   -->
   <PropertyGroup Condition="'$(Configuration)' == 'Local-Release'">
-    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\gacutil.exe" -i "$(TargetPath)" -f
-xcopy /Y "$(TargetPath)" "C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Tasks\"
-xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "C:\Program Files (x86)\Microsoft SQL Server\100\DTS\UpgradeMappings\"
-xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "C:\Program Files\Microsoft SQL Server\100\DTS\UpgradeMappings\"
+    <PostBuildEvent>xcopy /Y "$(TargetPath)" "%USERPROFILE%\builds\$(SolutionName)\100\DTS\Tasks\"
+xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "%USERPROFILE%\builds\$(SolutionName)\100\DTS\UpgradeMappings\"
+xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "%USERPROFILE%\builds\$(SolutionName)\100\DTS\UpgradeMappings\"
 
-xcopy /Y "$(TargetPath)" "C:\PP.SSIS\100\DTS\Tasks\"
-xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "C:\PP.SSIS\100\DTS\UpgradeMappings\"
-xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "C:\PP.SSIS\100\DTS\UpgradeMappings\"
-
-xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Deploy.bat" "C:\PP.SSIS\"
+xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Deploy.bat" "%USERPROFILE%\builds\$(SolutionName)\"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
