@@ -315,7 +315,7 @@
     <Content Include="PP.SSIS.DataFlow.SQL2012.Mappings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Local-Release'">
     <PostBuildEvent>xcopy /Y "$(TargetPath)" "%25USERPROFILE%25\builds\$(SolutionName)\110\DTS\PipelineComponents\"
 xcopy /Y "$(ProjectDir)\$(TargetName).SQL2012.Extensions.xml" "%25USERPROFILE%25\builds\$(SolutionName)\110\DTS\UpgradeMappings\"
 xcopy /Y "$(ProjectDir)\$(TargetName).SQL2012.Mappings.xml" "%25USERPROFILE%25\builds\$(SolutionName)\110\DTS\UpgradeMappings\"

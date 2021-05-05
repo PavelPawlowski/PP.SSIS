@@ -313,7 +313,7 @@
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Local-Release'">
     <PostBuildEvent>xcopy /Y "$(TargetPath)" "%25USERPROFILE%25\builds\$(SolutionName)\150\DTS\PipelineComponents\"
 xcopy /Y "$(ProjectDir)\$(TargetName).Extensions.xml" "%25USERPROFILE%25\builds\$(SolutionName)\150\DTS\UpgradeMappings\"
 xcopy /Y "$(ProjectDir)\$(TargetName).Mappings.xml" "%25USERPROFILE%25\builds\$(SolutionName)\150\DTS\UpgradeMappings\"
