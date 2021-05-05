@@ -10,6 +10,9 @@ trigger:
 
 pool: 'SelfHosted-Azure'
 
+workspace:
+  clean: all
+
 variables:
   solutionControlFlow: '**/PP.SSIS.ControlFlow.sln'
   solutionDataFlow: '**/PP.SSIS.DataFlow.sln'
