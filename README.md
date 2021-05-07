@@ -15,7 +15,7 @@ Components are designed to work with SSIS 2008 - SSIS 2019
  
 ## Control FLow Components
 
-* Sleep Task
+* Sleep Task (SSIS 2012+)
 * Wait For File Task
 * Wait for Sinal Task
 * Wait for Time Task

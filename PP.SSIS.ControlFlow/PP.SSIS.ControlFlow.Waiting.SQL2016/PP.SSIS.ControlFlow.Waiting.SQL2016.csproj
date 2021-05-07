@@ -58,9 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Deploy.bat">
-      <Link>PP.SSIS.ControlFlow.Deploy.bat</Link>
-    </None>
     <None Include="PP.SSIS.ControlFlow.Waiting.SQL2016.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -183,7 +180,7 @@
       xcopy /Y "$(ProjectDir)$(TargetName).Extensions.xml" "%USERPROFILE%\builds\$(SolutionName)\130\DTS\UpgradeMappings\"
       xcopy /Y "$(ProjectDir)$(TargetName).Mappings.xml" "%USERPROFILE%\builds\$(SolutionName)\130\DTS\UpgradeMappings\"
 
-      xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Deploy.bat" "%USERPROFILE%\builds\$(SolutionName)\"
+      xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Deploy.bat" "%USERPROFILE%\builds\$(SolutionName)\"
     </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

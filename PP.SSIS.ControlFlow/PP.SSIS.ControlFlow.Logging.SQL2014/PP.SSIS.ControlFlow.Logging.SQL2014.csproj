@@ -77,9 +77,7 @@
     <Compile Include="VariablesToXmlTask.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Install_PP.SSIS.ControlFlow.Logging.SQL2014.ps1" />
     <None Include="PP.SSIS.ControlFlow.Logging.SQL2014.snk" />
-    <None Include="PP.SSIS.ControlFlow.Deploy.bat" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -106,7 +104,7 @@
       xcopy /Y "$(ProjectDir)$(TargetName).SQL2014.Extensions.xml" "%USERPROFILE%\builds\$(SolutionName)\120\DTS\UpgradeMappings\"
       xcopy /Y "$(ProjectDir)$(TargetName).SQL2014.Mappings.xml" "%USERPROFILE%\builds\$(SolutionName)\120\DTS\UpgradeMappings\"
 
-      xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Deploy.bat" "%USERPROFILE%\builds\$(SolutionName)\"
+      xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Deploy.bat" "%USERPROFILE%\builds\$(SolutionName)\"
     </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

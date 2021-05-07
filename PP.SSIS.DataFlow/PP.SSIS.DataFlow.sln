@@ -14,6 +14,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.DataFlow.SQL2017", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.DataFlow.SQL2019", "PP.SSIS.DataFlow.SQL2019\PP.SSIS.DataFlow.SQL2019.csproj", "{D011D4C2-81EC-49F6-B8F3-FD047D6B3296}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{A5056A16-64F8-4D10-92EA-D16D060241B0}"
+	ProjectSection(SolutionItems) = preProject
+		PP.SSIS.DataFlow.Deploy.bat = PP.SSIS.DataFlow.Deploy.bat
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

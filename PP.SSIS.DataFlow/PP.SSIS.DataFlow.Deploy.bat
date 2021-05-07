@@ -60,7 +60,7 @@ goto :EOF
 REM PRINT USAGE help
 echo.
 echo Usage:
-echo PP.SSIS.DataFlow.Deploy.bat versionToDeploy
+echo PP.SSIS.DataFlow.Deploy.bat versionToDeploy gacUtilLocation
 echo.
 echo Example:
 echo PP.SSIS.DataFlow.Deploy.bat all                           (Install all versions of components, detect gacutil)

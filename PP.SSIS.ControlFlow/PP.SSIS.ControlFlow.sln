@@ -25,6 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Logging
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SSIS.ControlFlow.Waiting.SQL2019", "PP.SSIS.ControlFlow.Waiting.SQL2019\PP.SSIS.ControlFlow.Waiting.SQL2019.csproj", "{655022BC-3231-4493-928F-C641882E2B8C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{4F67E2EC-B6E2-439F-B8FB-0397C2B3A819}"
+	ProjectSection(SolutionItems) = preProject
+		PP.SSIS.ControlFlow.Deploy.bat = PP.SSIS.ControlFlow.Deploy.bat
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -267,7 +267,7 @@
 xcopy /Y "$(ProjectDir)\$(TargetName).SQL2008.Extensions.xml" "%25USERPROFILE%25\builds\$(SolutionName)\100\DTS\UpgradeMappings\"
 xcopy /Y "$(ProjectDir)\$(TargetName).SQL2008.Extensions.xml" "%25USERPROFILE%25\builds\$(SolutionName)\100\DTS\UpgradeMappings\"
 
-xcopy /Y "$(SolutionDir)\PP.SSIS.DataFlow.SQL2014\PP.SSIS.DataFlow.Deploy.bat" "%25USERPROFILE%25\builds\$(SolutionName)\"
+xcopy /Y "$(SolutionDir)\PP.SSIS.DataFlow.Deploy.bat" "%25USERPROFILE%25\builds\$(SolutionName)\"
 
 </PostBuildEvent>
   </PropertyGroup>

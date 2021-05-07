@@ -408,24 +408,37 @@ steps:
     CleanTargetFolder: false
     flattenFolders: true
 
-###############################
-# Copy Deployment batch files #
-###############################
+#########################################
+# Copy Deployment batch files + License #
+#########################################
 
 - task: CopyFiles@2
   displayName: 'Copy Deployment Batch Control Flow'
   inputs:
-    SourceFolder: 'PP.SSIS.ControlFlow\PP.SSIS.ControlFlow.Logging.SQL2014'
-    Contents: '**\*.bat'
+    SourceFolder: 'PP.SSIS.ControlFlow'
+    Contents: |
+      *.bat
+      README.md
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.ControlFlow'
     flattenFolders: true
 
 - task: CopyFiles@2
   displayName: 'Copy Deployment Batch Data Flow'
   inputs:
-    SourceFolder: 'PP.SSIS.DataFlow\PP.SSIS.DataFlow.SQL2014'
-    Contents: '**\*.bat'
+    SourceFolder: 'PP.SSIS.DataFlow'
+    Contents: |
+      *.bat
+      README.md
     TargetFolder: '$(Build.BinariesDirectory)\PP.SSIS.DataFlow'
+    flattenFolders: true
+
+- task: CopyFiles@2
+  displayName: 'Copy License and Readme'
+  inputs:
+    Contents: |
+      LICENSE
+      README.md
+    TargetFolder: '$(Build.BinariesDirectory)'
     flattenFolders: true
 
 #####################

@@ -110,9 +110,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Deploy.bat">
-      <Link>PP.SSIS.ControlFlow.Deploy.bat</Link>
-    </None>
     <None Include="PP.SSIS.ControlFlow.Logging.SQL2008.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +128,7 @@
 xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "%USERPROFILE%\builds\$(SolutionName)\100\DTS\UpgradeMappings\"
 xcopy /Y "$(ProjectDir)$(TargetName).SQL2008.Extensions.xml" "%USERPROFILE%\builds\$(SolutionName)\100\DTS\UpgradeMappings\"
 
-xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Logging.SQL2014\PP.SSIS.ControlFlow.Deploy.bat" "%USERPROFILE%\builds\$(SolutionName)\"
+xcopy /Y "$(SolutionDir)\PP.SSIS.ControlFlow.Deploy.bat" "%USERPROFILE%\builds\$(SolutionName)\"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

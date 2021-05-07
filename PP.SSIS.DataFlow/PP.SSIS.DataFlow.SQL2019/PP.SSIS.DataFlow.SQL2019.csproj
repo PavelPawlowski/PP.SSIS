@@ -320,7 +320,7 @@ xcopy /Y "$(ProjectDir)\$(TargetName).Mappings.xml" "%25USERPROFILE%25\builds\$(
 xcopy /Y "$(ProjectDir)\$(TargetName).Extensions.xml" "%25USERPROFILE%25\builds\$(SolutionName)\150\DTS\UpgradeMappings\"
 xcopy /Y "$(ProjectDir)\$(TargetName).Mappings.xml" "%25USERPROFILE%25\builds\$(SolutionName)\150\DTS\UpgradeMappings\"
 
-xcopy /Y "$(SolutionDir)\PP.SSIS.DataFlow.SQL2014\PP.SSIS.DataFlow.Deploy.bat" "%25USERPROFILE%25\builds\$(SolutionName)\"
+xcopy /Y "$(SolutionDir)\PP.SSIS.DataFlow.Deploy.bat" "%25USERPROFILE%25\builds\$(SolutionName)\"
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
